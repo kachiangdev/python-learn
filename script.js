@@ -178,11 +178,72 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize line numbers for code editor
     initializeLineNumbers();
     
+    // Initialize tab handling for code editor
+    initializeTabHandling();
+    
     // Add line numbers to code examples after a short delay (for all pages)
     setTimeout(() => {
         addLineNumbersToCodeExamples();
     }, 200);
 });
+
+// Initialize tab handling for code editor
+function initializeTabHandling() {
+    const codeEditor = document.getElementById('pythonCode');
+    
+    if (!codeEditor) return;
+    
+    codeEditor.addEventListener('keydown', function(e) {
+        // Handle Tab key
+        if (e.key === 'Tab') {
+            e.preventDefault(); // Prevent default tab behavior (focus change)
+            
+            const start = this.selectionStart;
+            const end = this.selectionEnd;
+            const value = this.value;
+            
+            if (e.shiftKey) {
+                // Shift+Tab: Remove indentation
+                const lineStart = value.lastIndexOf('\n', start - 1) + 1;
+                const lineEnd = value.indexOf('\n', start);
+                const actualLineEnd = lineEnd === -1 ? value.length : lineEnd;
+                const currentLine = value.substring(lineStart, actualLineEnd);
+                
+                // Remove up to 4 spaces or 1 tab from the beginning of the line
+                let newLine = currentLine;
+                if (currentLine.startsWith('    ')) {
+                    newLine = currentLine.substring(4);
+                } else if (currentLine.startsWith('\t')) {
+                    newLine = currentLine.substring(1);
+                } else if (currentLine.startsWith(' ')) {
+                    // Remove up to 4 leading spaces
+                    const leadingSpaces = currentLine.match(/^ */)[0].length;
+                    const spacesToRemove = Math.min(leadingSpaces, 4);
+                    newLine = currentLine.substring(spacesToRemove);
+                }
+                
+                // Replace the line
+                this.value = value.substring(0, lineStart) + newLine + value.substring(actualLineEnd);
+                
+                // Adjust cursor position
+                const removedChars = currentLine.length - newLine.length;
+                this.selectionStart = this.selectionEnd = Math.max(lineStart, start - removedChars);
+            } else {
+                // Tab: Add indentation (4 spaces)
+                const tabChar = '    '; // Use 4 spaces instead of tab character
+                
+                // Insert tab at cursor position
+                this.value = value.substring(0, start) + tabChar + value.substring(end);
+                
+                // Move cursor after the inserted tab
+                this.selectionStart = this.selectionEnd = start + tabChar.length;
+            }
+            
+            // Trigger input event to update line numbers
+            this.dispatchEvent(new Event('input'));
+        }
+    });
+}
 
 // Initialize line numbers functionality
 function initializeLineNumbers() {
@@ -895,7 +956,10 @@ print = custom_print
 try:
 ${indentedCode}
 except Exception as e:
-    window.addToOutput(f"Error: {str(e)}")
+    # Simple error reporting without traceback module
+    error_msg = str(e)
+    error_type = type(e).__name__
+    window.addToOutput(f"Error: {error_type}: {error_msg}")
 `;
                 
                 // Append to body temporarily
@@ -931,8 +995,17 @@ except Exception as e:
                 const output = window.pythonOutput;
                 
                 if (pythonErrors.length > 0) {
-                    // Extract error message from console
+                    // Extract error message from console and fix line numbers
                     let errorMsg = pythonErrors[0];
+                    
+                    // Fix line numbers in syntax errors (subtract 12 for wrapper code)
+                    if (errorMsg.includes('line ')) {
+                        errorMsg = errorMsg.replace(/line (\d+)/g, (match, lineNum) => {
+                            const adjustedLine = parseInt(lineNum) - 12;
+                            return adjustedLine > 0 ? `line ${adjustedLine}` : `line ${lineNum}`;
+                        });
+                    }
+                    
                     if (errorMsg.includes('SyntaxError:')) {
                         errorMsg = errorMsg.split('SyntaxError:')[1].trim();
                     } else if (errorMsg.includes('IndentationError:')) {
@@ -944,8 +1017,8 @@ except Exception as e:
                     // Remove only trailing newlines, preserve leading/internal whitespace
                     const cleanOutput = output.replace(/\n+$/, '');
                     outputDisplay.textContent = cleanOutput;
-                    // Check if it's an error message
-                    if (cleanOutput.trim().startsWith('Error:')) {
+                    // Check if it contains any error message (not just starts with)
+                    if (cleanOutput.includes('Error:')) {
                         outputDisplay.className = 'output-display error';
                     } else {
                         outputDisplay.className = 'output-display success';
