@@ -8,6 +8,11 @@ echo "🚀 Starting deployment..."
 # Step 1: Navigate to project directory and pull latest from GitHub
 echo "📥 Pulling latest code from GitHub..."
 cd /var/www/python-learn
+
+# Add safe directory exception for Git security
+echo "🔒 Adding Git safe directory exception..."
+sudo git config --global --add safe.directory /var/www/python-learn
+
 if sudo git pull; then
     echo "✅ Code updated successfully"
 else
