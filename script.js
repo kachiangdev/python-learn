@@ -632,6 +632,34 @@ for num in [1, 2, 3, 4]:
 print("Sum:", total)`
         ],
         10: [
+            `# Examples of built-in functions
+# These come with Python - ready to use!
+numbers = [1, 2, 3, 4, 5]
+text = "Hello World"
+
+print("Using built-in functions:")
+print("Length of list:", len(numbers))
+print("Maximum number:", max(numbers))
+print("Sum of numbers:", sum(numbers))
+print("Text in uppercase:", text.upper())
+print("Convert to integer:", int("42"))`,
+            `# Examples of user-defined functions
+# These are functions YOU create!
+
+def calculate_area(length, width):
+    """Calculate area of a rectangle"""
+    return length * width
+
+def greet_user(name, age):
+    """Greet a user with their name and age"""
+    return f"Hi {name}! You are {age} years old."
+
+# Using your custom functions
+area = calculate_area(5, 3)
+greeting = greet_user("Alice", 25)
+
+print("Area:", area)
+print(greeting)`,
             `# Defining a function
 def greet(name):
     print(f"Hello, {name}!")
@@ -812,7 +840,8 @@ def show_results(score, total):
         // Load into lesson content code blocks
         lessonCodeBlocks.forEach((codeBlock, index) => {
             if (lessonExamples[index]) {
-                const exampleCode = lessonExamples[index].replace(/\\n/g, '\n');
+                // Don't convert \\n to actual newlines for display - keep them as escape sequences
+                const exampleCode = lessonExamples[index];
                 // Set the text content directly
                 codeBlock.textContent = exampleCode;
             }
