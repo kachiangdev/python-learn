@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 15: Data Structures - Python Learning Course</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css?v=1751263721">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.12.0/brython.min.js"></script>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>🐍 Python Course</h2>
+                <a href="index.html">← Back to Course</a>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="lesson1.html" class="lesson-link">
+                    <div class="lesson-number">1</div>
+                    <span>Running Python Online & Printing</span>
+                </a>
+                <a href="lesson2.html" class="lesson-link">
+                    <div class="lesson-number">2</div>
+                    <span>Variables and Data Types</span>
+                </a>
+                <a href="lesson3.html" class="lesson-link">
+                    <div class="lesson-number">3</div>
+                    <span>Basic Arithmetic</span>
+                </a>
+                <a href="lesson4.html" class="lesson-link">
+                    <div class="lesson-number">4</div>
+                    <span>String Manipulation</span>
+                </a>
+                <a href="lesson5.html" class="lesson-link">
+                    <div class="lesson-number">5</div>
+                    <span>Input from User</span>
+                </a>
+                <a href="lesson6.html" class="lesson-link">
+                    <div class="lesson-number">6</div>
+                    <span>Conditions and If-Else</span>
+                </a>
+                <a href="lesson7.html" class="lesson-link">
+                    <div class="lesson-number">7</div>
+                    <span>Python Adventure Generator</span>
+                </a>
+                <a href="lesson8.html" class="lesson-link">
+                    <div class="lesson-number">8</div>
+                    <span>Lists</span>
+                </a>
+                <a href="lesson9.html" class="lesson-link">
+                    <div class="lesson-number">9</div>
+                    <span>Loops</span>
+                </a>
+                <a href="lesson10.html" class="lesson-link">
+                    <div class="lesson-number">10</div>
+                    <span>Functions</span>
+                </a>
+                <a href="lesson11.html" class="lesson-link">
+                    <div class="lesson-number">11</div>
+                    <span>Dictionaries</span>
+                </a>
+                <a href="lesson12.html" class="lesson-link">
+                    <div class="lesson-number">12</div>
+                    <span>Simple Error Handling</span>
+                </a>
+                <a href="lesson13.html" class="lesson-link">
+                    <div class="lesson-number">13</div>
+                    <span>Ultimate Python RPG Builder</span>
+                </a>
+                <a href="lesson14.html" class="lesson-link">
+                    <div class="lesson-number">14</div>
+                    <span>Classes and Objects</span>
+                </a>
+                <a href="lesson15.html" class="lesson-link active">
+                    <div class="lesson-number">15</div>
+                    <span>Data Structures</span>
+                </a>
+                <a href="lesson16.html" class="lesson-link">
+                    <div class="lesson-number">16</div>
+                    <span>Algorithms</span>
+                </a>
+                <a href="lesson17.html" class="lesson-link">
+                    <div class="lesson-number">17</div>
+                    <span>Advanced Review Project</span>
+                </a>
+                <a href="lesson18.html" class="lesson-link">
+                    <div class="lesson-number">18</div>
+                    <span>Final Capstone Project</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content">
+                <div class="lesson-header">
+                    <h1>Lesson 15: Data Structures</h1>
+                    <p class="goal">🗂️ Master advanced data structures for efficient programming!</p>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🗂️ What are Data Structures?</h2>
+                    <p>Data structures are specialized ways to organize and store data so you can access and modify it efficiently. Think of them as different types of containers, each designed for specific tasks!</p>
+                    
+                    <div class="info-box">
+                        <h3>🎯 Common Data Structures We'll Learn</h3>
+                        <ul>
+                            <li><strong>Sets</strong> - Collections of unique items (no duplicates)</li>
+                            <li><strong>Tuples</strong> - Immutable ordered collections</li>
+                            <li><strong>Stacks</strong> - Last In, First Out (LIFO) collections</li>
+                            <li><strong>Queues</strong> - First In, First Out (FIFO) collections</li>
+                            <li><strong>Deques</strong> - Double-ended queues for efficient operations</li>
+                            <li><strong>Collections</strong> - Specialized containers for specific needs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎯 Step 1: Sets - Unique Collections</h2>
+                    <p>Sets are like mathematical sets - they contain unique elements with no duplicates. Perfect for removing duplicates and checking membership!</p>
+                    
+                    <div class="code-block">
+# Creating sets
+fruits = {"apple", "banana", "orange", "apple"}  # Duplicate "apple" will be removed
+print(f"Fruits set: {fruits}")  # Output: {'apple', 'banana', 'orange'}
+
+# Set operations
+numbers = {1, 2, 3, 4, 5}
+more_numbers = {4, 5, 6, 7, 8}
+
+print("🔢 SET OPERATIONS DEMO")
+print("=" * 40)
+
+# Union (combine sets)
+union_result = numbers | more_numbers  # or numbers.union(more_numbers)
+print(f"Union: {union_result}")
+
+# Intersection (common elements)
+intersection_result = numbers & more_numbers  # or numbers.intersection(more_numbers)
+print(f"Intersection: {intersection_result}")
+
+# Difference (elements in first set but not second)
+difference_result = numbers - more_numbers  # or numbers.difference(more_numbers)
+print(f"Difference: {difference_result}")
+
+# Symmetric difference (elements in either set, but not both)
+sym_diff_result = numbers ^ more_numbers  # or numbers.symmetric_difference(more_numbers)
+print(f"Symmetric Difference: {sym_diff_result}")
+
+# Practical example: Remove duplicates from a list
+original_list = [1, 2, 2, 3, 3, 3, 4, 4, 5]
+unique_list = list(set(original_list))
+print(f"\nOriginal: {original_list}")
+print(f"Unique: {unique_list}")
+
+# Check membership (very fast!)
+if "apple" in fruits:
+    print("🍎 Apple is in the fruits set!")
+
+# Add and remove elements
+fruits.add("grape")
+fruits.remove("banana")  # Raises error if not found
+fruits.discard("kiwi")   # Doesn't raise error if not found
+print(f"Modified fruits: {fruits}")
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎯 Step 2: Tuples - Immutable Sequences</h2>
+                    <p>Tuples are like lists, but they can't be changed once created. Perfect for data that shouldn't be modified!</p>
+                    
+                    <div class="code-block">
+# Creating tuples
+coordinates = (10, 20)  # 2D point
+rgb_color = (255, 128, 0)  # Orange color
+person_info = ("Alice", 25, "Engineer")  # Name, age, job
+
+print("📍 TUPLE EXAMPLES")
+print("=" * 30)
+
+# Accessing tuple elements
+print(f"Coordinates: x={coordinates[0]}, y={coordinates[1]}")
+print(f"Color RGB: Red={rgb_color[0]}, Green={rgb_color[1]}, Blue={rgb_color[2]}")
+
+# Tuple unpacking (very useful!)
+name, age, job = person_info
+print(f"Person: {name}, {age} years old, works as {job}")
+
+# Multiple assignment using tuples
+x, y = 10, 20  # Same as x, y = (10, 20)
+print(f"x={x}, y={y}")
+
+# Swapping variables (elegant Python way!)
+a, b = 5, 10
+print(f"Before swap: a={a}, b={b}")
+a, b = b, a  # Swap using tuple unpacking!
+print(f"After swap: a={a}, b={b}")
+
+# Tuples as dictionary keys (because they're immutable)
+locations = {
+    (0, 0): "Origin",
+    (10, 20): "Home",
+    (50, 100): "Office"
+}
+print(f"Location at (10, 20): {locations[(10, 20)]}")
+
+# Named tuples (advanced feature)
+from collections import namedtuple
+
+# Create a named tuple class
+Point = namedtuple('Point', ['x', 'y'])
+Student = namedtuple('Student', ['name', 'age', 'grade'])
+
+# Use named tuples
+point = Point(10, 20)
+student = Student("Bob", 16, 85)
+
+print(f"\nNamed tuple point: {point}")
+print(f"Point x: {point.x}, Point y: {point.y}")
+print(f"Student: {student.name}, Age: {student.age}, Grade: {student.grade}")
+
+# Convert to dictionary
+student_dict = student._asdict()
+print(f"Student as dict: {student_dict}")
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎯 Step 3: Stacks - Last In, First Out (LIFO)</h2>
+                    <p>Stacks work like a pile of plates - you add to the top and take from the top. Great for undo operations, function calls, and parsing!</p>
+                    
+                    <div class="code-block">
+# Stack implementation using list
+class Stack:
+    """A simple stack implementation using a list"""
+    
+    def __init__(self):
+        self.items = []
+    
+    def push(self, item):
+        """Add item to the top of the stack"""
+        self.items.append(item)
+        print(f"📥 Pushed: {item}")
+    
+    def pop(self):
+        """Remove and return the top item"""
+        if not self.is_empty():
+            item = self.items.pop()
+            print(f"📤 Popped: {item}")
+            return item
+        else:
+            print("❌ Stack is empty!")
+            return None
+    
+    def peek(self):
+        """Look at the top item without removing it"""
+        if not self.is_empty():
+            return self.items[-1]
+        return None
+    
+    def is_empty(self):
+        """Check if the stack is empty"""
+        return len(self.items) == 0
+    
+    def size(self):
+        """Get the number of items in the stack"""
+        return len(self.items)
+    
+    def display(self):
+        """Show the current stack"""
+        print(f"Stack: {self.items} (top -> bottom)")
+
+# Stack demonstration
+print("📚 STACK DEMONSTRATION")
+print("=" * 40)
+
+stack = Stack()
+
+# Push items onto the stack
+stack.push("First")
+stack.push("Second") 
+stack.push("Third")
+stack.display()
+
+# Peek at the top
+print(f"👀 Top item: {stack.peek()}")
+
+# Pop items from the stack
+stack.pop()
+stack.pop()
+stack.display()
+
+print(f"Stack size: {stack.size()}")
+
+# Practical example: Parentheses checker
+def check_parentheses(expression):
+    """Check if parentheses are balanced using a stack"""
+    stack = []
+    pairs = {')': '(', '}': '{', ']': '['}
+    
+    for char in expression:
+        if char in '({[':
+            stack.append(char)
+        elif char in ')}]':
+            if not stack or stack.pop() != pairs[char]:
+                return False
+    
+    return len(stack) == 0
+
+# Test parentheses checker
+test_expressions = [
+    "(hello world)",
+    "((()))",
+    "([{}])",
+    "(((",
+    "())",
+    "{[()]}"
+]
+
+print("\n🔍 PARENTHESES CHECKER")
+print("=" * 30)
+for expr in test_expressions:
+    result = "✅ Balanced" if check_parentheses(expr) else "❌ Not balanced"
+    print(f"{expr}: {result}")
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎯 Step 4: Queues - First In, First Out (FIFO)</h2>
+                    <p>Queues work like a line at a store - first person in line is first to be served. Perfect for task scheduling and breadth-first search!</p>
+                    
+                    <div class="code-block">
+from collections import deque
+
+# Queue implementation using deque for efficiency
+class Queue:
+    """A queue implementation using deque for O(1) operations"""
+    
+    def __init__(self):
+        self.items = deque()
+    
+    def enqueue(self, item):
+        """Add item to the rear of the queue"""
+        self.items.append(item)
+        print(f"➡️ Enqueued: {item}")
+    
+    def dequeue(self):
+        """Remove and return the front item"""
+        if not self.is_empty():
+            item = self.items.popleft()
+            print(f"⬅️ Dequeued: {item}")
+            return item
+        else:
+            print("❌ Queue is empty!")
+            return None
+    
+    def front(self):
+        """Look at the front item without removing it"""
+        if not self.is_empty():
+            return self.items[0]
+        return None
+    
+    def is_empty(self):
+        """Check if the queue is empty"""
+        return len(self.items) == 0
+    
+    def size(self):
+        """Get the number of items in the queue"""
+        return len(self.items)
+    
+    def display(self):
+        """Show the current queue"""
+        items_list = list(self.items)
+        print(f"Queue: {items_list} (front -> rear)")
+
+# Queue demonstration
+print("🚶 QUEUE DEMONSTRATION")
+print("=" * 40)
+
+queue = Queue()
+
+# Add people to the queue
+queue.enqueue("Alice")
+queue.enqueue("Bob")
+queue.enqueue("Charlie")
+queue.display()
+
+# Serve people from the front
+print(f"👀 Next person: {queue.front()}")
+queue.dequeue()
+queue.dequeue()
+queue.display()
+
+# Practical example: Simple task scheduler
+class TaskScheduler:
+    """A simple task scheduler using a queue"""
+    
+    def __init__(self):
+        self.tasks = Queue()
+        self.completed = []
+    
+    def add_task(self, task):
+        """Add a task to the scheduler"""
+        self.tasks.enqueue(task)
+    
+    def process_next_task(self):
+        """Process the next task in the queue"""
+        if not self.tasks.is_empty():
+            task = self.tasks.dequeue()
+            self.completed.append(task)
+            print(f"✅ Completed task: {task}")
+            return task
+        else:
+            print("✨ All tasks completed!")
+            return None
+    
+    def show_status(self):
+        """Show current status"""
+        print(f"📋 Pending tasks: {self.tasks.size()}")
+        print(f"✅ Completed tasks: {len(self.completed)}")
+        if not self.tasks.is_empty():
+            print(f"🔄 Next task: {self.tasks.front()}")
+
+# Task scheduler demonstration
+print("\n📋 TASK SCHEDULER DEMO")
+print("=" * 30)
+
+scheduler = TaskScheduler()
+
+# Add tasks
+scheduler.add_task("Write code")
+scheduler.add_task("Test application")
+scheduler.add_task("Deploy to server")
+scheduler.add_task("Update documentation")
+
+scheduler.show_status()
+
+# Process tasks
+print("\n🔄 Processing tasks...")
+while not scheduler.tasks.is_empty():
+    scheduler.process_next_task()
+
+scheduler.show_status()
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎯 Step 5: Advanced Collections</h2>
+                    <p>Python's collections module provides specialized container datatypes!</p>
+                    
+                    <div class="code-block">
+from collections import defaultdict, Counter, OrderedDict, deque
+
+print("🧰 ADVANCED COLLECTIONS DEMO")
+print("=" * 50)
+
+# 1. defaultdict - automatically creates missing keys
+print("1️⃣ DEFAULTDICT - Auto-creating dictionaries")
+word_count = defaultdict(int)  # Default value is 0 for missing keys
+
+text = "hello world hello python world"
+for word in text.split():
+    word_count[word] += 1  # No need to check if key exists!
+
+print(f"Word count: {dict(word_count)}")
+
+# Group students by grade
+student_grades = defaultdict(list)
+students = [("Alice", "A"), ("Bob", "B"), ("Charlie", "A"), ("David", "B"), ("Eve", "A")]
+
+for name, grade in students:
+    student_grades[grade].append(name)
+
+print("Students by grade:")
+for grade, names in student_grades.items():
+    print(f"  Grade {grade}: {names}")
+
+print("\n" + "-" * 40)
+
+# 2. Counter - counting hashable objects
+print("2️⃣ COUNTER - Counting made easy")
+letters = Counter("hello world")
+print(f"Letter frequency: {letters}")
+
+# Most common elements
+most_common = letters.most_common(3)
+print(f"Most common letters: {most_common}")
+
+# Count items in a list
+colors = ["red", "blue", "red", "green", "blue", "red", "yellow"]
+color_count = Counter(colors)
+print(f"Color count: {color_count}")
+
+print("\n" + "-" * 40)
+
+# 3. deque - double-ended queue
+print("3️⃣ DEQUE - Efficient operations at both ends")
+dq = deque([1, 2, 3])
+print(f"Initial deque: {dq}")
+
+# Add to both ends
+dq.appendleft(0)  # Add to left
+dq.append(4)      # Add to right
+print(f"After adding to both ends: {dq}")
+
+# Remove from both ends
+left_item = dq.popleft()   # Remove from left
+right_item = dq.pop()      # Remove from right
+print(f"Removed {left_item} from left, {right_item} from right")
+print(f"Final deque: {dq}")
+
+# Rotate the deque
+dq.rotate(1)  # Rotate right by 1
+print(f"After rotating right: {dq}")
+dq.rotate(-2)  # Rotate left by 2
+print(f"After rotating left by 2: {dq}")
+
+print("\n" + "-" * 40)
+
+# 4. Real-world example: Browser history
+print("4️⃣ BROWSER HISTORY SIMULATOR")
+class BrowserHistory:
+    def __init__(self, max_history=10):
+        self.history = deque(maxlen=max_history)  # Limited size deque
+        self.current_index = -1
+    
+    def visit(self, url):
+        """Visit a new URL"""
+        # Remove forward history when visiting new page
+        while len(self.history) > self.current_index + 1:
+            self.history.pop()
+        
+        self.history.append(url)
+        self.current_index = len(self.history) - 1
+        print(f"🌐 Visited: {url}")
+    
+    def back(self):
+        """Go back in history"""
+        if self.current_index > 0:
+            self.current_index -= 1
+            current_url = self.history[self.current_index]
+            print(f"⬅️ Back to: {current_url}")
+            return current_url
+        else:
+            print("❌ No previous page")
+            return None
+    
+    def forward(self):
+        """Go forward in history"""
+        if self.current_index < len(self.history) - 1:
+            self.current_index += 1
+            current_url = self.history[self.current_index]
+            print(f"➡️ Forward to: {current_url}")
+            return current_url
+        else:
+            print("❌ No next page")
+            return None
+    
+    def show_history(self):
+        """Show browsing history"""
+        print("📚 Browser History:")
+        for i, url in enumerate(self.history):
+            marker = " <- CURRENT" if i == self.current_index else ""
+            print(f"  {i+1}. {url}{marker}")
+
+# Browser history demo
+browser = BrowserHistory()
+browser.visit("google.com")
+browser.visit("github.com")
+browser.visit("stackoverflow.com")
+browser.visit("python.org")
+
+browser.show_history()
+
+browser.back()
+browser.back()
+browser.visit("reddit.com")  # This will clear forward history
+
+browser.show_history()
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>💡 Data Structure Comparison</h2>
+                    <div class="concept-grid">
+                        <div class="concept-item">
+                            <h3>📋 When to Use Each Structure</h3>
+                            <ul>
+                                <li><strong>List</strong>: When you need ordered, mutable data</li>
+                                <li><strong>Tuple</strong>: When you need ordered, immutable data</li>
+                                <li><strong>Set</strong>: When you need unique items and fast membership testing</li>
+                                <li><strong>Dict</strong>: When you need key-value mappings</li>
+                                <li><strong>Stack</strong>: For LIFO operations (undo, parsing)</li>
+                                <li><strong>Queue</strong>: For FIFO operations (task scheduling)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="concept-item">
+                            <h3>⚡ Performance Characteristics</h3>
+                            <ul>
+                                <li><strong>List</strong>: O(1) append, O(n) insert/delete</li>
+                                <li><strong>Set</strong>: O(1) add/remove/lookup on average</li>
+                                <li><strong>Dict</strong>: O(1) get/set/delete on average</li>
+                                <li><strong>Deque</strong>: O(1) append/pop from both ends</li>
+                                <li><strong>Tuple</strong>: O(1) access, immutable</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎯 Practice Exercises</h2>
+                    
+                    <div class="exercise">
+                        <h3>Exercise 1: Duplicate Remover</h3>
+                        <p>Create a function that removes duplicates from a list while preserving order using appropriate data structures.</p>
+                        <div class="hint">
+                            <strong>Hint:</strong> Use a set to track seen items and a list to maintain order.
+                        </div>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h3>Exercise 2: Expression Evaluator</h3>
+                        <p>Build a simple calculator that evaluates mathematical expressions with parentheses using a stack.</p>
+                        <div class="hint">
+                            <strong>Hint:</strong> Use two stacks - one for numbers and one for operators.
+                        </div>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h3>Exercise 3: Word Frequency Counter</h3>
+                        <p>Create a program that counts word frequencies in text and finds the most common words using Counter.</p>
+                        <div class="hint">
+                            <strong>Hint:</strong> Use Counter and its most_common() method.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🏆 Challenge: Multi-Data Structure Manager</h2>
+                    <div class="challenge">
+                        <h3>Challenge: Contact Management System</h3>
+                        <p>Build a contact management system that uses multiple data structures:</p>
+                        <ul>
+                            <li>Set for unique phone numbers</li>
+                            <li>Dict for name-to-contact mapping</li>
+                            <li>List for contact history</li>
+                            <li>Counter for call frequency tracking</li>
+                            <li>Stack for recent calls (undo feature)</li>
+                        </ul>
+                        <div class="hint">
+                            <strong>Advanced Features:</strong> Add search, sort by frequency, export/import, and contact groups.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎉 Congratulations!</h2>
+                    <div class="success-box">
+                        <h3>🌟 You've Mastered Data Structures!</h3>
+                        <p>You now understand:</p>
+                        <ul>
+                            <li>✅ Sets for unique collections and fast lookups</li>
+                            <li>✅ Tuples for immutable, ordered data</li>
+                            <li>✅ Stacks for LIFO operations</li>
+                            <li>✅ Queues for FIFO operations</li>
+                            <li>✅ Advanced collections like Counter and defaultdict</li>
+                            <li>✅ When to choose the right data structure</li>
+                            <li>✅ Performance characteristics of each structure</li>
+                        </ul>
+                        <p><strong>🚀 Ready to learn algorithms that work with these structures!</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python Runner Frame -->
+            <div class="python-runner-frame">
+                <div class="runner-header">
+                    <h3>🗂️ Data Structure Lab</h3>
+                    <button class="runner-toggle" onclick="togglePythonRunner()">◀</button>
+                </div>
+                <div class="runner-content">
+                    <div class="runner-editor">
+                        <div class="code-editor-container">
+                            <div class="line-numbers" id="lineNumbers">1</div>
+                            <textarea id="pythonCode" class="code-editor" spellcheck="false" placeholder="Experiment with data structures here!
+
+# Try different data structures:
+
+# Sets
+unique_numbers = {1, 2, 3, 2, 1}
+print(f'Set: {unique_numbers}')
+
+# Tuples
+coordinates = (10, 20)
+x, y = coordinates
+print(f'Point: ({x}, {y})')
+
+# Stack example
+stack = []
+stack.append('first')
+stack.append('second')
+print(f'Popped: {stack.pop()}')
+
+# Queue example
+from collections import deque
+queue = deque()
+queue.append('task1')
+queue.append('task2')
+print(f'Processing: {queue.popleft()}')"></textarea>
+                        </div>
+                    </div>
+                    <div class="runner-controls">
+                        <button class="run-button" onclick="runPythonCode()">
+                            <span>🚀 Run Structures!</span>
+                        </button>
+                        <button class="clear-button" onclick="clearPythonCode()">
+                            🗑️ Clear
+                        </button>
+                    </div>
+                    <div class="runner-output">
+                        <div class="output-header">
+                            <span>🗂️ Structure Output:</span>
+                            <button class="clear-output-button" onclick="clearOutput()">Clear Output</button>
+                        </div>
+                        <div id="pythonOutput" class="output-content"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js?v=1751263721"></script>
+</body>
+</html> 

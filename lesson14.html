@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 14: Mini Quiz Game - Python Learning Course</title>
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Lesson 14: Classes and Objects - Python Learning Course</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="styles.css?v=1751263721">
+    <link rel="stylesheet" href="styles.css?v=1751263721">
     <script src="https://cdn.jsdelivr.net/npm/brython@3.12.0/brython.min.js"></script>
 </head>
 <body>
@@ -44,7 +44,7 @@
                 </a>
                 <a href="lesson7.html" class="lesson-link">
                     <div class="lesson-number">7</div>
-                    <span>Number Guessing Game</span>
+                    <span>Python Adventure Generator</span>
                 </a>
                 <a href="lesson8.html" class="lesson-link">
                     <div class="lesson-number">8</div>
@@ -68,11 +68,27 @@
                 </a>
                 <a href="lesson13.html" class="lesson-link">
                     <div class="lesson-number">13</div>
-                    <span>Text Adventure Game</span>
+                    <span>Ultimate Python RPG Builder</span>
                 </a>
                 <a href="lesson14.html" class="lesson-link active">
                     <div class="lesson-number">14</div>
-                    <span>Mini Quiz Game</span>
+                    <span>Classes and Objects</span>
+                </a>
+                <a href="lesson15.html" class="lesson-link">
+                    <div class="lesson-number">15</div>
+                    <span>Data Structures</span>
+                </a>
+                <a href="lesson16.html" class="lesson-link">
+                    <div class="lesson-number">16</div>
+                    <span>Algorithms</span>
+                </a>
+                <a href="lesson17.html" class="lesson-link">
+                    <div class="lesson-number">17</div>
+                    <span>Advanced Review Project</span>
+                </a>
+                <a href="lesson18.html" class="lesson-link">
+                    <div class="lesson-number">18</div>
+                    <span>Final Capstone Project</span>
                 </a>
             </nav>
         </aside>
@@ -81,114 +97,452 @@
         <main class="main-content">
             <div class="content">
                 <div class="lesson-header">
-                    <h1>Lesson 14: Mini Quiz Game</h1>
-                    <p class="goal">Combine everything learned.</p>
+                    <h1>Lesson 14: Classes and Objects</h1>
+                    <p class="goal">🏗️ Learn Object-Oriented Programming to build organized, reusable code!</p>
                 </div>
 
                 <div class="lesson-section">
-                    <h2>🧠 What is a Quiz Game?</h2>
-                    <p>A quiz game is the perfect capstone project that combines everything you've learned! It tests knowledge through questions and answers, keeps track of scores, and provides feedback. This project showcases your mastery of Python fundamentals.</p>
+                    <h2>🏗️ What are Classes and Objects?</h2>
+                    <p>Classes are like blueprints for creating objects! Think of a class as a template that defines what properties and behaviors an object should have. An object is a specific instance created from that blueprint.</p>
                     
                     <div class="info-box">
-                        <h3>🎯 Quiz Game Features</h3>
+                        <h3>🎯 Object-Oriented Programming (OOP) Concepts</h3>
                         <ul>
-                            <li>Ask 3+ quiz questions to test knowledge</li>
-                            <li>Use a score variable to track correct answers</li>
-                            <li>Use functions to organize question logic</li>
-                            <li>Print final score with personalized feedback</li>
-                            <li>Combine input, conditions, functions, and variables</li>
+                            <li><strong>Class</strong> - A blueprint/template for creating objects</li>
+                            <li><strong>Object</strong> - A specific instance of a class</li>
+                            <li><strong>Attributes</strong> - Properties that store data about the object</li>
+                            <li><strong>Methods</strong> - Functions that define what the object can do</li>
+                            <li><strong>Inheritance</strong> - Creating new classes based on existing ones</li>
+                            <li><strong>Encapsulation</strong> - Keeping data and methods together</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="lesson-section">
-                    <h2>Example Concepts to Use</h2>
+                    <h2>🏠 Real-World Analogy</h2>
+                    <p>Think of a <strong>House Blueprint</strong>:</p>
                     <ul>
-                        <li><code>input()</code></li>
-                        <li><code>if-else</code></li>
-                        <li>Functions</li>
-                        <li>Loops (optional)</li>
+                        <li>📐 <strong>Class (Blueprint)</strong>: Defines rooms, windows, doors</li>
+                        <li>🏠 <strong>Object (Actual House)</strong>: A specific house built from the blueprint</li>
+                        <li>🚪 <strong>Attributes</strong>: Number of rooms, color, address</li>
+                        <li>🔧 <strong>Methods</strong>: open_door(), turn_on_lights(), lock_house()</li>
                     </ul>
                 </div>
 
-                <!-- <div class="lesson-section">
-                    <h2>Complete Quiz Game Code</h2>
+                <div class="lesson-section">
+                    <h2>🎯 Step 1: Creating Your First Class</h2>
+                    
+                    <h3>🐕 Example: Dog Class</h3>
                     <div class="code-block">
-                        <em>Loading example code...</em>
+class Dog:
+    """A simple Dog class to demonstrate OOP concepts"""
+    
+    # Class attribute (shared by all dogs)
+    species = "Canis lupus"
+    
+    def __init__(self, name, breed, age):
+        """Constructor method - runs when creating a new dog"""
+        self.name = name      # Instance attribute
+        self.breed = breed    # Instance attribute  
+        self.age = age        # Instance attribute
+        self.energy = 100     # Default energy level
+    
+    def bark(self):
+        """Method to make the dog bark"""
+        print(f"{self.name} says: Woof! Woof!")
+        
+    def play(self):
+        """Method to make the dog play"""
+        if self.energy > 20:
+            self.energy -= 20
+            print(f"{self.name} is playing! Energy: {self.energy}")
+        else:
+            print(f"{self.name} is too tired to play!")
+    
+    def sleep(self):
+        """Method to restore the dog's energy"""
+        self.energy = 100
+        print(f"{self.name} is sleeping... Energy restored!")
+    
+    def get_info(self):
+        """Method to display dog information"""
+        print(f"🐕 {self.name} - {self.breed}, {self.age} years old")
+
+# Creating objects (instances) from the Dog class
+my_dog = Dog("Buddy", "Golden Retriever", 3)
+friend_dog = Dog("Max", "German Shepherd", 5)
+
+# Using the objects
+my_dog.bark()
+my_dog.play()
+my_dog.get_info()
+
+print("\n" + "="*40 + "\n")
+
+friend_dog.bark()
+friend_dog.get_info()
                     </div>
-                </div> -->
+                </div>
 
                 <div class="lesson-section">
-                    <h2>How It Works</h2>
-                    <ol>
-                        <li><code>ask_question()</code> function handles individual questions</li>
-                        <li><code>run_quiz()</code> function manages the entire game</li>
-                        <li>We track score and total questions</li>
-                        <li>Each question checks if the answer is correct</li>
-                        <li>At the end, we calculate and display the percentage</li>
-                        <li>We give different feedback based on performance</li>
-                    </ol>
+                    <h2>🎯 Step 2: More Complex Example - Student Management System</h2>
+                    
+                    <div class="code-block">
+class Student:
+    """A comprehensive Student class"""
+    
+    # Class attribute to track total students
+    total_students = 0
+    
+    def __init__(self, name, age, student_id):
+        """Initialize a new student"""
+        self.name = name
+        self.age = age
+        self.student_id = student_id
+        self.grades = []  # List to store grades
+        self.courses = []  # List to store enrolled courses
+        
+        # Increment total students when a new student is created
+        Student.total_students += 1
+    
+    def add_grade(self, subject, grade):
+        """Add a grade for a subject"""
+        if 0 <= grade <= 100:
+            self.grades.append({"subject": subject, "grade": grade})
+            print(f"✅ Added grade {grade} for {subject}")
+        else:
+            print("❌ Grade must be between 0 and 100!")
+    
+    def calculate_average(self):
+        """Calculate the student's average grade"""
+        if not self.grades:
+            return 0
+        
+        total = sum(grade_info["grade"] for grade_info in self.grades)
+        return total / len(self.grades)
+    
+    def enroll_course(self, course_name):
+        """Enroll in a new course"""
+        if course_name not in self.courses:
+            self.courses.append(course_name)
+            print(f"📚 {self.name} enrolled in {course_name}")
+        else:
+            print(f"❌ Already enrolled in {course_name}")
+    
+    def get_grade_letter(self):
+        """Convert average grade to letter grade"""
+        avg = self.calculate_average()
+        if avg >= 90:
+            return "A"
+        elif avg >= 80:
+            return "B"
+        elif avg >= 70:
+            return "C"
+        elif avg >= 60:
+            return "D"
+        else:
+            return "F"
+    
+    def display_report_card(self):
+        """Display a comprehensive report card"""
+        print(f"\n📋 REPORT CARD FOR {self.name.upper()}")
+        print("=" * 40)
+        print(f"Student ID: {self.student_id}")
+        print(f"Age: {self.age}")
+        print(f"Courses: {', '.join(self.courses) if self.courses else 'None'}")
+        print("\nGrades:")
+        
+        if self.grades:
+            for grade_info in self.grades:
+                print(f"  {grade_info['subject']}: {grade_info['grade']}")
+            print(f"\nAverage: {self.calculate_average():.1f}")
+            print(f"Letter Grade: {self.get_grade_letter()}")
+        else:
+            print("  No grades recorded")
+        
+        print("=" * 40)
+    
+    @classmethod
+    def get_total_students(cls):
+        """Class method to get total number of students"""
+        return cls.total_students
+    
+    def __str__(self):
+        """String representation of the student"""
+        return f"Student({self.name}, ID: {self.student_id})"
+
+# Example usage
+print("🏫 STUDENT MANAGEMENT SYSTEM")
+print("=" * 50)
+
+# Create students
+alice = Student("Alice Johnson", 16, "ST001")
+bob = Student("Bob Smith", 17, "ST002")
+charlie = Student("Charlie Brown", 16, "ST003")
+
+# Add courses and grades
+alice.enroll_course("Mathematics")
+alice.enroll_course("Physics")
+alice.enroll_course("Chemistry")
+
+alice.add_grade("Mathematics", 95)
+alice.add_grade("Physics", 87)
+alice.add_grade("Chemistry", 92)
+
+bob.enroll_course("Mathematics")
+bob.enroll_course("History")
+bob.add_grade("Mathematics", 78)
+bob.add_grade("History", 85)
+
+# Display report cards
+alice.display_report_card()
+bob.display_report_card()
+
+print(f"\n👥 Total Students: {Student.get_total_students()}")
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎯 Step 3: Inheritance - Creating Specialized Classes</h2>
+                    
+                    <div class="code-block">
+# Base class
+class Vehicle:
+    """Base class for all vehicles"""
+    
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.speed = 0
+    
+    def start(self):
+        print(f"🔑 {self.make} {self.model} is starting...")
+    
+    def stop(self):
+        self.speed = 0
+        print(f"🛑 {self.make} {self.model} has stopped.")
+    
+    def accelerate(self, amount):
+        self.speed += amount
+        print(f"🚗 Speed increased to {self.speed} mph")
+    
+    def get_info(self):
+        return f"{self.year} {self.make} {self.model}"
+
+# Derived class (inherits from Vehicle)
+class Car(Vehicle):
+    """Car class that inherits from Vehicle"""
+    
+    def __init__(self, make, model, year, doors):
+        super().__init__(make, model, year)  # Call parent constructor
+        self.doors = doors
+        self.fuel = 100
+    
+    def honk(self):
+        print(f"🔊 {self.make} {self.model}: BEEP BEEP!")
+    
+    def refuel(self):
+        self.fuel = 100
+        print(f"⛽ {self.make} {self.model} refueled!")
+    
+    def drive(self, distance):
+        fuel_needed = distance * 0.1
+        if self.fuel >= fuel_needed:
+            self.fuel -= fuel_needed
+            print(f"🚗 Drove {distance} miles. Fuel remaining: {self.fuel:.1f}")
+        else:
+            print("❌ Not enough fuel!")
+
+# Another derived class
+class Motorcycle(Vehicle):
+    """Motorcycle class that inherits from Vehicle"""
+    
+    def __init__(self, make, model, year, engine_size):
+        super().__init__(make, model, year)
+        self.engine_size = engine_size
+    
+    def wheelie(self):
+        print(f"🏍️ {self.make} {self.model} is doing a wheelie!")
+    
+    def rev_engine(self):
+        print(f"🏍️ {self.make} {self.model}: VROOOOM!")
+
+# Example usage
+print("🚗 VEHICLE INHERITANCE DEMO")
+print("=" * 40)
+
+# Create different vehicles
+my_car = Car("Toyota", "Camry", 2022, 4)
+my_bike = Motorcycle("Harley-Davidson", "Street 750", 2021, 750)
+
+# Use inherited methods
+my_car.start()
+my_car.accelerate(30)
+my_car.honk()
+my_car.drive(50)
+print(f"Car info: {my_car.get_info()}")
+
+print("\n" + "-" * 40 + "\n")
+
+my_bike.start()
+my_bike.accelerate(45)
+my_bike.rev_engine()
+my_bike.wheelie()
+print(f"Bike info: {my_bike.get_info()}")
+                    </div>
                 </div>
 
                 <div class="lesson-section">
                     <h2>💡 Key Concepts</h2>
                     <div class="concept-grid">
                         <div class="concept-item">
-                            <h3>🧮 Score Tracking</h3>
-                            <p>Keep track of correct answers:</p>
+                            <h3>🏗️ Class Definition</h3>
+                            <p>Create a blueprint for objects:</p>
                             <div class="code-block">
+class MyClass:
+    def __init__(self, value):
+        self.value = value
+    
+    def my_method(self):
+        return f"Value: {self.value}"
+
+# Create object
+obj = MyClass("Hello")
+print(obj.my_method())
                             </div>
                         </div>
                         
                         <div class="concept-item">
-                            <h3>❓ Question Functions</h3>
-                            <p>Organize questions in reusable functions:</p>
+                            <h3>🔧 Constructor Method</h3>
+                            <p>Initialize objects with __init__:</p>
                             <div class="code-block">
+class Person:
+    def __init__(self, name, age):
+        self.name = name  # Instance attribute
+        self.age = age    # Instance attribute
+    
+    def introduce(self):
+        print(f"Hi, I'm {self.name}, {self.age} years old")
+
+person = Person("Alice", 25)
+person.introduce()
                             </div>
                         </div>
                         
                         <div class="concept-item">
-                            <h3>📊 Final Results</h3>
-                            <p>Calculate and display quiz results:</p>
+                            <h3>🧬 Inheritance</h3>
+                            <p>Create specialized classes from base classes:</p>
                             <div class="code-block">
+class Animal:
+    def __init__(self, name):
+        self.name = name
+    
+    def speak(self):
+        pass
+
+class Cat(Animal):
+    def speak(self):
+        return f"{self.name} says Meow!"
+
+cat = Cat("Whiskers")
+print(cat.speak())
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="challenge-box">
-                    <h3>🚀 Challenge</h3>
-                    <p>Randomize question order. Allow replay.</p>
-                </div>
-
-                <div class="practice-box">
-                    <h3>🎯 Practice</h3>
-                    <p>Try running this code and take the quiz! Then modify it to add your own questions.</p>
+                <div class="lesson-section">
+                    <h2>🎯 Practice Exercises</h2>
+                    
+                    <div class="exercise">
+                        <h3>Exercise 1: Book Class</h3>
+                        <p>Create a Book class with title, author, pages, and read_status. Add methods to mark as read and display info.</p>
+                        <div class="hint">
+                            <strong>Hint:</strong> Use __init__ for initialization and create methods like mark_as_read() and display_info().
+                        </div>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h3>Exercise 2: Bank Account</h3>
+                        <p>Create a BankAccount class with deposit, withdraw, and check_balance methods. Include error handling for insufficient funds.</p>
+                        <div class="hint">
+                            <strong>Hint:</strong> Track balance as an attribute and use conditionals to prevent overdrafts.
+                        </div>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h3>Exercise 3: Shape Inheritance</h3>
+                        <p>Create a Shape base class, then Rectangle and Circle classes that inherit from it. Each should calculate area differently.</p>
+                        <div class="hint">
+                            <strong>Hint:</strong> Use super() to call parent constructor and override methods in child classes.
+                        </div>
+                    </div>
                 </div>
 
                 <div class="lesson-section">
-                    <h2>Congratulations! 🎉</h2>
-                    <p>You've completed the Python Learning Course! You now have a solid foundation in Python programming.</p>
-                    <p>Keep practicing and building projects to strengthen your skills. The best way to learn programming is by doing!</p>
-                
+                    <h2>🏆 Challenge: RPG Character System</h2>
+                    <div class="challenge">
+                        <h3>Challenge: Advanced Character Classes</h3>
+                        <p>Create a character class system with a base Character class and specialized classes like Warrior, Mage, and Rogue. Each should have unique abilities and stats.</p>
+                        <div class="hint">
+                            <strong>Advanced Features:</strong>
+                            <ul>
+                                <li>Base Character class with common attributes (health, level, experience)</li>
+                                <li>Specialized classes with unique skills and stats</li>
+                                <li>Methods for leveling up, using skills, and battle mechanics</li>
+                                <li>Class methods to track total characters created</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎉 Congratulations!</h2>
+                    <div class="success-box">
+                        <h3>🌟 You've Mastered Object-Oriented Programming!</h3>
+                        <p>You now understand:</p>
+                        <ul>
+                            <li>✅ How to create classes and objects</li>
+                            <li>✅ Constructor methods and instance attributes</li>
+                            <li>✅ Instance methods and class methods</li>
+                            <li>✅ Inheritance and method overriding</li>
+                            <li>✅ Real-world applications of OOP</li>
+                            <li>✅ How to organize code with classes</li>
+                        </ul>
+                        <p><strong>🚀 Ready for advanced data structures and algorithms!</strong></p>
+                    </div>
+                </div>
             </div>
 
             <!-- Python Runner Frame -->
             <div class="python-runner-frame">
                 <div class="runner-header">
-                    <h3>🐍 Python Editor</h3>
+                    <h3>🏗️ Class Builder</h3>
                     <button class="runner-toggle" onclick="togglePythonRunner()">◀</button>
                 </div>
                 <div class="runner-content">
                     <div class="runner-editor">
                         <div class="code-editor-container">
                             <div class="line-numbers" id="lineNumbers">1</div>
-                            <textarea id="pythonCode" class="code-editor" spellcheck="false" placeholder="Enter your Python code here..."></textarea>
+                            <textarea id="pythonCode" class="code-editor" spellcheck="false" placeholder="Create your own classes here!
+
+# Example starter code:
+class MyClass:
+    def __init__(self, name):
+        self.name = name
+    
+    def greet(self):
+        print(f'Hello, I am {self.name}!')
+
+# Create an object
+obj = MyClass('Python')
+obj.greet()"></textarea>
                         </div>
                     </div>
                     <div class="runner-controls">
                         <button class="run-button" onclick="runPythonCode()">
-                            <span>▶️ Run Code</span>
+                            <span>🚀 Run Classes!</span>
                         </button>
                         <button class="clear-button" onclick="clearPythonCode()">
                             🗑️ Clear
@@ -196,16 +550,16 @@
                     </div>
                     <div class="runner-output">
                         <div class="output-header">
-                            <h4>Output:</h4>
+                            <span>🏗️ Class Output:</span>
+                            <button class="clear-output-button" onclick="clearOutput()">Clear Output</button>
                         </div>
-                        <div id="output" class="output-display">
-                            <em>Click "Run Code" to see the output here</em>
-                        </div>
+                        <div id="pythonOutput" class="output-content"></div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
+
     <script src="script.js?v=1751263721"></script>
 </body>
-</html>
+</html> 

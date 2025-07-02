@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 7: Number Guessing Game - Python Learning Course</title>
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Lesson 7: Python Adventure Generator - Python Learning Course</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="styles.css?v=1751263721">
+    <link rel="stylesheet" href="styles.css?v=1751263721">
     <script src="https://cdn.jsdelivr.net/npm/brython@3.12.0/brython.min.js"></script>
 </head>
 <body>
@@ -44,7 +44,7 @@
                 </a>
                 <a href="lesson7.html" class="lesson-link active">
                     <div class="lesson-number">7</div>
-                    <span>Number Guessing Game</span>
+                    <span>Python Adventure Generator</span>
                 </a>
                 <a href="lesson8.html" class="lesson-link">
                     <div class="lesson-number">8</div>
@@ -68,7 +68,7 @@
                 </a>
                 <a href="lesson13.html" class="lesson-link">
                     <div class="lesson-number">13</div>
-                    <span>Text Adventure Game</span>
+                    <span>Ultimate Python RPG Builder</span>
                 </a>
                 <a href="lesson14.html" class="lesson-link">
                     <div class="lesson-number">14</div>
@@ -81,129 +81,374 @@
         <main class="main-content">
             <div class="content">
                 <div class="lesson-header">
-                    <h1>Lesson 7: Number Guessing Game</h1>
-                    <p class="goal">Build your first game.</p>
+                    <h1>Lesson 7: 🎭 Python Adventure Generator</h1>
+                    <p class="goal">🎯 Review all concepts from lessons 1-6 with a fun, interactive project!</p>
                 </div>
 
                 <div class="lesson-section">
-                    <h2>🎮 What is a Number Guessing Game?</h2>
-                    <p>A number guessing game is a fun way to practice programming concepts! The computer thinks of a secret number, and the player tries to guess it. This simple game combines user input, loops, conditions, and random numbers.</p>
+                    <h2>🌟 Welcome to Your First Big Project!</h2>
+                    <p>Congratulations! You've learned the fundamentals of Python programming. Now it's time to put everything together in one exciting project: the <strong>Python Adventure Generator</strong>!</p>
                     
                     <div class="info-box">
-                        <h3>🎯 Game Features</h3>
+                        <h3>🎮 What You'll Build</h3>
+                        <p>A fun, interactive program that:</p>
                         <ul>
-                            <li>Computer picks random number 1–20</li>
-                            <li>User keeps guessing until correct</li>
-                            <li>Program says "Too high", "Too low", or "Correct!"</li>
-                            <li>Track and print the number of guesses</li>
-                            <li>Combines loops, conditions, and user interaction</li>
+                            <li>🧙‍♂️ Creates a personalized adventure character</li>
+                            <li>📊 Calculates character stats using math</li>
+                            <li>🎲 Generates random adventure scenarios</li>
+                            <li>💰 Simulates a treasure calculator</li>
+                            <li>📜 Creates epic adventure stories</li>
+                            <li>🏆 Gives you an adventure rating</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="lesson-section">
-                    <h2>Example Concepts to Use</h2>
-                    <ul>
-                        <li><code>import random</code></li>
-                        <li><code>while</code> loop</li>
-                        <li><code>if-else</code> branching</li>
-                        <li>User input</li>
-                    </ul>
+                    <h2>📚 Concepts We'll Review</h2>
+                    <div class="concept-review-grid">
+                        <div class="concept-review-item">
+                            <h3>📝 Lesson 1: Printing</h3>
+                            <p>Format adventure stories and character info</p>
+                        </div>
+                        <div class="concept-review-item">
+                            <h3>📦 Lesson 2: Variables & Types</h3>
+                            <p>Store character stats, names, and adventure data</p>
+                        </div>
+                        <div class="concept-review-item">
+                            <h3>🧮 Lesson 3: Arithmetic</h3>
+                            <p>Calculate character power, treasure values</p>
+                        </div>
+                        <div class="concept-review-item">
+                            <h3>🔤 Lesson 4: String Magic</h3>
+                            <p>Create dynamic stories with f-strings</p>
+                        </div>
+                        <div class="concept-review-item">
+                            <h3>📥 Lesson 5: User Input</h3>
+                            <p>Get player choices and preferences</p>
+                        </div>
+                        <div class="concept-review-item">
+                            <h3>🤔 Lesson 6: Conditions</h3>
+                            <p>Make adventure decisions and branching stories</p>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- <div class="lesson-section">
-                    <h2>Complete Game Code</h2>
+                <div class="lesson-section">
+                    <h2>🎯 Project: The Complete Adventure Generator</h2>
+                    <p>Let's build this step by step! Copy and run each section, then combine them into one amazing program.</p>
+
+                    <h3>🏁 Step 1: Welcome & Character Creation</h3>
                     <div class="code-block">
-                        
-                    </div>
-                </div> -->
+# 🎭 PYTHON ADVENTURE GENERATOR 🎭
+print("=" * 50)
+print("🌟 WELCOME TO THE PYTHON ADVENTURE GENERATOR! 🌟")
+print("=" * 50)
+print()
 
-                <div class="lesson-section">
-                    <h2>How It Works</h2>
-                    <ol>
-                        <li><code>random.randint(1, 20)</code> generates a random number</li>
-                        <li><code>while True:</code> creates an infinite loop</li>
-                        <li>We get user input and convert it to integer</li>
-                        <li>We compare the guess to the secret number</li>
-                        <li>If correct, we print success message and <code>break</code></li>
-                        <li>Otherwise, we give a hint and continue</li>
-                    </ol>
+# Get player information (Lesson 5: Input)
+print("Let's create your character!")
+name = input("🧙‍♂️ What's your character's name? ")
+age = int(input("🎂 How old are you? "))
+favorite_color = input("🎨 What's your favorite color? ")
+
+# String manipulation (Lesson 4)
+character_name = name.title()  # Capitalize first letter
+print(f"\n✨ Welcome, {character_name} the {favorite_color.upper()} adventurer! ✨")
+                    </div>
+
+                    <h3>🎲 Step 2: Character Stats Calculator</h3>
+                    <div class="code-block">
+# Calculate character stats (Lesson 3: Arithmetic + Lesson 2: Variables)
+print("\n" + "=" * 30)
+print("📊 CALCULATING YOUR STATS...")
+print("=" * 30)
+
+# Base stats using arithmetic operations
+strength = (age * 2) + 10
+magic_power = (len(character_name) * 5) + 15
+luck = (age % 10) + (len(favorite_color) * 2)
+total_power = strength + magic_power + luck
+
+# Display stats with formatting (Lesson 1: Printing)
+print(f"💪 Strength: {strength}")
+print(f"🔮 Magic Power: {magic_power}")
+print(f"🍀 Luck: {luck}")
+print(f"⚡ TOTAL POWER: {total_power}")
+
+# Character type based on highest stat (Lesson 6: Conditions)
+if strength > magic_power and strength > luck:
+    character_type = "WARRIOR"
+    special_ability = "Mighty Strike"
+elif magic_power > strength and magic_power > luck:
+    character_type = "WIZARD"
+    special_ability = "Arcane Blast"
+else:
+    character_type = "ROGUE"
+    special_ability = "Lucky Strike"
+
+print(f"\n🎭 You are a {character_type}!")
+print(f"✨ Special Ability: {special_ability}")
+                    </div>
+
+                    <h3>⚔️ Step 3: Adventure Scenario Generator</h3>
+                    <div class="code-block">
+# Adventure choice (Lesson 5: Input + Lesson 6: Conditions)
+print("\n" + "=" * 35)
+print("🗺️  CHOOSE YOUR ADVENTURE!")
+print("=" * 35)
+print("1. 🏰 Explore the Mysterious Castle")
+print("2. 🌲 Venture into the Enchanted Forest")
+print("3. 🏔️  Climb the Dragon's Mountain")
+
+choice = input("\nEnter your choice (1, 2, or 3): ")
+
+# Different adventures based on choice
+if choice == "1":
+    location = "Mysterious Castle"
+    monster = "Stone Guardian"
+    treasure_base = 100
+    danger_level = "Medium"
+elif choice == "2":
+    location = "Enchanted Forest"
+    monster = "Forest Troll"
+    treasure_base = 75
+    danger_level = "Low"
+elif choice == "3":
+    location = "Dragon's Mountain"
+    monster = "Ancient Dragon"
+    treasure_base = 200
+    danger_level = "High"
+else:
+    location = "Random Portal"
+    monster = "Mysterious Shadow"
+    treasure_base = 50
+    danger_level = "Unknown"
+
+print(f"\n🎯 Adventure: {location}")
+print(f"👹 You encounter a {monster}!")
+print(f"⚠️  Danger Level: {danger_level}")
+                    </div>
+
+                    <h3>💰 Step 4: Battle & Treasure Calculator</h3>
+                    <div class="code-block">
+# Battle outcome (Lesson 6: Conditions + Lesson 3: Math)
+print("\n" + "=" * 25)
+print("⚔️  BATTLE TIME!")
+print("=" * 25)
+
+# Calculate success chance based on stats
+success_chance = total_power + (luck * 2)
+required_power = treasure_base + 50
+
+if success_chance >= required_power:
+    battle_result = "VICTORY"
+    treasure_multiplier = 2.0
+    experience_gained = 100
+    print("🎉 VICTORY! You defeated the monster!")
+elif success_chance >= (required_power * 0.7):
+    battle_result = "NARROW VICTORY"
+    treasure_multiplier = 1.5
+    experience_gained = 75
+    print("😅 NARROW VICTORY! It was a tough fight!")
+else:
+    battle_result = "RETREAT"
+    treasure_multiplier = 0.5
+    experience_gained = 25
+    print("😬 You had to retreat, but you learned something!")
+
+# Calculate rewards (Lesson 3: Arithmetic)
+gold_found = int(treasure_base * treasure_multiplier)
+gems_found = gold_found // 20  # Floor division
+total_treasure_value = gold_found + (gems_found * 15)
+
+print(f"\n💰 Gold Found: {gold_found}")
+print(f"💎 Gems Found: {gems_found}")
+print(f"💰 Total Treasure Value: {total_treasure_value}")
+print(f"⭐ Experience Gained: {experience_gained} XP")
+                    </div>
+
+                    <h3>📜 Step 5: Epic Story Generator</h3>
+                    <div class="code-block">
+# Generate epic story (Lesson 4: String manipulation + f-strings)
+print("\n" + "=" * 40)
+print("📜 YOUR EPIC ADVENTURE STORY")
+print("=" * 40)
+
+# Create dynamic story with all our variables
+adventure_story = f"""
+Once upon a time, {character_name}, a {age}-year-old {character_type.lower()}, 
+embarked on a legendary quest. Wearing {favorite_color.lower()} armor that 
+shimmered in the sunlight, our hero ventured into the {location.lower()}.
+
+With {strength} strength, {magic_power} magic power, and {luck} luck points,
+{character_name} was ready for anything! The journey led to an encounter 
+with the fearsome {monster.upper()}!
+
+Using the powerful "{special_ability}" technique, our brave {character_type.lower()}
+achieved a {battle_result.lower()}! The adventure yielded {gold_found} gold pieces
+and {gems_found} precious gems.
+
+{character_name}'s power level of {total_power} proved {"mighty" if total_power > 100 else "adequate"}
+for this {"perilous" if danger_level == "High" else "challenging"} quest!
+"""
+
+print(adventure_story)
+                    </div>
+
+                    <h3>🏆 Step 6: Adventure Rating & Finale</h3>
+                    <div class="code-block">
+# Final rating system (Lesson 6: Complex conditions)
+print("=" * 40)
+print("🏆 ADVENTURE RATING SYSTEM")
+print("=" * 40)
+
+# Calculate final score using multiple factors
+adventure_score = (total_power * 2) + experience_gained + (total_treasure_value // 10)
+
+# Determine rating with complex conditions
+if adventure_score >= 500:
+    rating = "LEGENDARY HERO"
+    emoji = "🌟"
+elif adventure_score >= 350:
+    rating = "MASTER ADVENTURER"
+    emoji = "🏆"
+elif adventure_score >= 200:
+    rating = "SKILLED EXPLORER"
+    emoji = "🎖️"
+elif adventure_score >= 100:
+    rating = "BRAVE WANDERER"
+    emoji = "⚔️"
+else:
+    rating = "NOVICE ADVENTURER"
+    emoji = "🗡️"
+
+# Display final results (Lesson 1: Printing + Lesson 4: String formatting)
+print(f"📊 Final Adventure Score: {adventure_score}")
+print(f"{emoji} Adventure Rating: {rating}")
+print()
+
+# Personalized message based on rating
+if adventure_score >= 400:
+    message = f"Amazing work, {character_name}! You're destined for greatness!"
+elif adventure_score >= 200:
+    message = f"Well done, {character_name}! You're becoming a true adventurer!"
+else:
+    message = f"Great start, {character_name}! Every expert was once a beginner!"
+
+print(f"💌 {message}")
+
+# Fun facts using string operations and math
+print("\n" + "=" * 30)
+print("📊 FUN ADVENTURE FACTS")
+print("=" * 30)
+print(f"🔤 Your name has {len(character_name)} letters")
+print(f"🎨 Your favorite color '{favorite_color}' has {len(favorite_color)} letters")
+print(f"⚡ Your power is {total_power // 10} times stronger than average!")
+print(f"💰 You found {gold_found + gems_found} treasure items total!")
+print(f"📈 Adventure difficulty was {danger_level.upper()}!")
+
+print("\n🎉 Thanks for playing the Python Adventure Generator! 🎉")
+                    </div>
                 </div>
 
                 <div class="lesson-section">
-                    <h2>💡 Key Concepts</h2>
-                    <div class="concept-grid">
-                        <div class="concept-item">
-                            <h3>🎲 Random Numbers</h3>
-                            <p>Generate random numbers for games:</p>
-                            <div class="code-block">
-                            </div>
-                        </div>
-                        
-                        <div class="concept-item">
-                            <h3>🔄 While Loop</h3>
-                            <p>Repeat code until a condition is met:</p>
-                            <div class="code-block">
-                            </div>
-                        </div>
-                        
-                        <div class="concept-item">
-                            <h3>🛑 Break Statement</h3>
-                            <p>Exit a loop when a condition is met:</p>
-                            <div class="code-block">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lesson-section">
-                    <h2>🎯 Practice Exercises</h2>
+                    <h2>🎯 Your Mission: Build the Complete Adventure!</h2>
                     
-                    <div class="exercise">
-                        <h3>Exercise 1: Simple Guessing Game</h3>
-                        <p>Create a guessing game where the user tries to guess a number between 1 and 10.</p>
-                        <div class="hint">
-                            <strong>Hint:</strong> Use random.randint(1, 10) and a while loop with break when correct.
-                        </div>
-                    </div>
-                    
-                    <div class="exercise">
-                        <h3>Exercise 2: Counting Loop</h3>
-                        <p>Use a while loop to count from 1 to 10 and print each number.</p>
-                        <div class="hint">
-                            <strong>Hint:</strong> Start with count = 1, use while count <= 10, and increment count += 1.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lesson-section">
-                    <h2>🏆 Challenge</h2>
                     <div class="challenge">
-                        <h3>Challenge: Enhanced Guessing Game</h3>
-                        <p>Create a guessing game with hints ("too high" or "too low"), limit guesses to 5, and add a score counter.</p>
+                        <h3>🚀 Main Challenge: Complete Adventure Generator</h3>
+                        <p>Combine all the code sections above into one complete program! Run it and experience your personalized adventure.</p>
+                        
                         <div class="hint">
-                            <strong>Hint:</strong> Use a counter for attempts and provide feedback based on comparison with the target number.
+                            <strong>💡 Pro Tips:</strong>
+                            <ul>
+                                <li>Copy each section in order</li>
+                                <li>Run the program multiple times with different inputs</li>
+                                <li>Try different names, ages, and choices to see how the story changes</li>
+                                <li>Notice how every concept from lessons 1-6 is being used!</li>
+                            </ul>
                         </div>
                     </div>
-                
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎨 Bonus Challenges</h2>
+                    
+                    <div class="exercise">
+                        <h3>🌟 Challenge 1: Add More Adventures</h3>
+                        <p>Add a 4th adventure option with your own creative location, monster, and treasure values.</p>
+                        <div class="hint">
+                            <strong>Hint:</strong> Add another elif condition in the adventure choice section.
+                        </div>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h3>🎭 Challenge 2: Character Customization</h3>
+                        <p>Ask for more character details like favorite animal or hobby, then incorporate them into the story.</p>
+                        <div class="hint">
+                            <strong>Hint:</strong> Use more input() functions and add the variables to your f-string story.
+                        </div>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h3>🧮 Challenge 3: Advanced Calculator</h3>
+                        <p>Create a "Magic Potion Calculator" that asks for ingredient quantities and calculates the potion's power using complex math.</p>
+                        <div class="hint">
+                            <strong>Hint:</strong> Use multiplication, division, and modulus operators with multiple input values.
+                        </div>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h3>🏆 Challenge 4: Rating System</h3>
+                        <p>Create your own adventure rating system with at least 6 different rating levels and custom messages.</p>
+                        <div class="hint">
+                            <strong>Hint:</strong> Use multiple if-elif statements with different score thresholds.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎉 Congratulations!</h2>
+                    <div class="success-box">
+                        <h3>🌟 You've Successfully Combined All Your Python Skills!</h3>
+                        <p>This project demonstrates that you can:</p>
+                        <ul>
+                            <li>✅ Print formatted output and create user interfaces</li>
+                            <li>✅ Use variables to store and manipulate different data types</li>
+                            <li>✅ Perform mathematical calculations and operations</li>
+                            <li>✅ Manipulate strings and create dynamic content</li>
+                            <li>✅ Get and process user input</li>
+                            <li>✅ Make decisions with conditional logic</li>
+                            <li>✅ Combine everything into a fun, interactive program!</li>
+                        </ul>
+                        <p><strong>🚀 You're ready for more advanced Python concepts!</strong></p>
+                    </div>
+                </div>
             </div>
 
             <!-- Python Runner Frame -->
             <div class="python-runner-frame">
                 <div class="runner-header">
-                    <h3>🐍 Python Editor</h3>
+                    <h3>🐍 Python Adventure Maker</h3>
                     <button class="runner-toggle" onclick="togglePythonRunner()">◀</button>
                 </div>
                 <div class="runner-content">
                     <div class="runner-editor">
                         <div class="code-editor-container">
                             <div class="line-numbers" id="lineNumbers">1</div>
-                            <textarea id="pythonCode" class="code-editor" spellcheck="false" placeholder="Enter your Python code here..."></textarea>
+                            <textarea id="pythonCode" class="code-editor" spellcheck="false" placeholder="Build your complete Python Adventure Generator here!
+
+# Start with:
+# 🎭 PYTHON ADVENTURE GENERATOR 🎭
+print('=' * 50)
+print('🌟 WELCOME TO THE PYTHON ADVENTURE GENERATOR! 🌟')
+print('=' * 50)
+
+# Then add each section from the lesson..."></textarea>
                         </div>
                     </div>
                     <div class="runner-controls">
                         <button class="run-button" onclick="runPythonCode()">
-                            <span>▶️ Run Code</span>
+                            <span>🚀 Launch Adventure!</span>
                         </button>
                         <button class="clear-button" onclick="clearPythonCode()">
                             🗑️ Clear
@@ -211,16 +456,16 @@
                     </div>
                     <div class="runner-output">
                         <div class="output-header">
-                            <h4>Output:</h4>
+                            <span>📜 Adventure Output:</span>
+                            <button class="clear-output-button" onclick="clearOutput()">Clear Output</button>
                         </div>
-                        <div id="output" class="output-display">
-                            <em>Click "Run Code" to see the output here</em>
-                        </div>
+                        <div id="pythonOutput" class="output-content"></div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
+
     <script src="script.js?v=1751263721"></script>
 </body>
 </html>

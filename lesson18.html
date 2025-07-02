@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 18: Final Capstone Project - Python Learning Course</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css?v=1751263721">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.12.0/brython.min.js"></script>
+</head>
+<body>
+    <div class="page-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>🐍 Python Course</h2>
+                <a href="index.html">← Back to Course</a>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="lesson1.html" class="lesson-link">
+                    <div class="lesson-number">1</div>
+                    <span>Running Python Online & Printing</span>
+                </a>
+                <a href="lesson2.html" class="lesson-link">
+                    <div class="lesson-number">2</div>
+                    <span>Variables and Data Types</span>
+                </a>
+                <a href="lesson3.html" class="lesson-link">
+                    <div class="lesson-number">3</div>
+                    <span>Basic Arithmetic</span>
+                </a>
+                <a href="lesson4.html" class="lesson-link">
+                    <div class="lesson-number">4</div>
+                    <span>String Manipulation</span>
+                </a>
+                <a href="lesson5.html" class="lesson-link">
+                    <div class="lesson-number">5</div>
+                    <span>Input from User</span>
+                </a>
+                <a href="lesson6.html" class="lesson-link">
+                    <div class="lesson-number">6</div>
+                    <span>Conditions and If-Else</span>
+                </a>
+                <a href="lesson7.html" class="lesson-link">
+                    <div class="lesson-number">7</div>
+                    <span>Python Adventure Generator</span>
+                </a>
+                <a href="lesson8.html" class="lesson-link">
+                    <div class="lesson-number">8</div>
+                    <span>Lists</span>
+                </a>
+                <a href="lesson9.html" class="lesson-link">
+                    <div class="lesson-number">9</div>
+                    <span>Loops</span>
+                </a>
+                <a href="lesson10.html" class="lesson-link">
+                    <div class="lesson-number">10</div>
+                    <span>Functions</span>
+                </a>
+                <a href="lesson11.html" class="lesson-link">
+                    <div class="lesson-number">11</div>
+                    <span>Dictionaries</span>
+                </a>
+                <a href="lesson12.html" class="lesson-link">
+                    <div class="lesson-number">12</div>
+                    <span>Simple Error Handling</span>
+                </a>
+                <a href="lesson13.html" class="lesson-link">
+                    <div class="lesson-number">13</div>
+                    <span>Ultimate Python RPG Builder</span>
+                </a>
+                <a href="lesson14.html" class="lesson-link">
+                    <div class="lesson-number">14</div>
+                    <span>Classes and Objects</span>
+                </a>
+                <a href="lesson15.html" class="lesson-link">
+                    <div class="lesson-number">15</div>
+                    <span>Data Structures</span>
+                </a>
+                <a href="lesson16.html" class="lesson-link">
+                    <div class="lesson-number">16</div>
+                    <span>Algorithms</span>
+                </a>
+                <a href="lesson17.html" class="lesson-link">
+                    <div class="lesson-number">17</div>
+                    <span>Advanced Review Project</span>
+                </a>
+                <a href="lesson18.html" class="lesson-link active">
+                    <div class="lesson-number">18</div>
+                    <span>Final Capstone Project</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="content">
+                <div class="lesson-header">
+                    <h1>Lesson 18: 🎓 Final Capstone Project</h1>
+                    <p class="goal">🏆 Create a Smart Task Management System - Your Python Mastery Showcase!</p>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🌟 The Ultimate Python Challenge</h2>
+                    <p>Congratulations on reaching the final project! Now it's time to showcase <strong>everything</strong> you've learned by building a sophisticated <strong>Smart Task Management System</strong>.</p>
+                    
+                    <div class="info-box">
+                        <h3>🎯 Complete System Features</h3>
+                        <ul>
+                            <li>👤 <strong>User Management</strong> - Registration, login, profiles (Classes)</li>
+                            <li>📋 <strong>Task Management</strong> - Create, edit, organize tasks (All data types)</li>
+                            <li>🗂️ <strong>Project Organization</strong> - Group tasks into projects (Data structures)</li>
+                            <li>🔍 <strong>Smart Search</strong> - Find tasks efficiently (Search algorithms)</li>
+                            <li>📊 <strong>Analytics Dashboard</strong> - Productivity insights (Math operations)</li>
+                            <li>🎯 <strong>Priority Sorting</strong> - Intelligent task ordering (Sorting algorithms)</li>
+                            <li>⏰ <strong>Deadline Tracking</strong> - Never miss a deadline (Date/time handling)</li>
+                            <li>📈 <strong>Progress Visualization</strong> - See your productivity (String formatting)</li>
+                            <li>🛡️ <strong>Data Validation</strong> - Robust error handling (Exception handling)</li>
+                            <li>💾 <strong>Data Persistence</strong> - Save/load your work (File operations)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>📚 Concepts Integration Map</h2>
+                    <div class="concept-review-grid">
+                        <div class="concept-review-item">
+                            <h3>🏗️ Lessons 1-6: Foundation</h3>
+                            <p>Print UI, variables, math, strings, input, conditions</p>
+                        </div>
+                        <div class="concept-review-item">
+                            <h3>🎮 Lesson 7: Integration</h3>
+                            <p>Adventure Generator concepts for user interaction</p>
+                        </div>
+                        <div class="concept-review-item">
+                            <h3>📋 Lessons 8-12: Core</h3>
+                            <p>Lists, loops, functions, dictionaries, error handling</p>
+                        </div>
+                        <div class="concept-review-item">
+                            <h3>🎯 Lesson 13: Advanced</h3>
+                            <p>RPG Builder patterns for complex systems</p>
+                        </div>
+                        <div class="concept-review-item">
+                            <h3>🚀 Lessons 14-16: Expert</h3>
+                            <p>Classes, data structures, algorithms</p>
+                        </div>
+                        <div class="concept-review-item">
+                            <h3>🏢 Lesson 17: Professional</h3>
+                            <p>Library system architecture patterns</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎯 Project Architecture Overview</h2>
+                    <div class="code-block">
+# SMART TASK MANAGEMENT SYSTEM
+# Final Capstone Project - Demonstrates ALL Python concepts learned
+
+from datetime import datetime, timedelta
+from collections import defaultdict, Counter, deque
+import json
+import hashlib
+
+class User:
+    """User class demonstrating OOP principles"""
+    def __init__(self, username, email, password):
+        self.username = username
+        self.email = email
+        self.password_hash = self._hash_password(password)
+        self.created_date = datetime.now()
+        self.tasks = []
+        self.projects = {}
+        self.productivity_stats = {
+            'tasks_completed': 0,
+            'total_tasks_created': 0,
+            'streak_days': 0,
+            'last_activity': None
+        }
+    
+    def _hash_password(self, password):
+        """Secure password hashing"""
+        return hashlib.sha256(password.encode()).hexdigest()
+    
+    def verify_password(self, password):
+        """Verify user password"""
+        return self._hash_password(password) == self.password_hash
+
+class Task:
+    """Task class with comprehensive features"""
+    def __init__(self, title, description="", priority=3, due_date=None, project=None):
+        self.id = self._generate_id()
+        self.title = title
+        self.description = description
+        self.priority = priority  # 1=highest, 5=lowest
+        self.due_date = due_date
+        self.project = project
+        self.status = "pending"  # pending, in_progress, completed
+        self.created_date = datetime.now()
+        self.completed_date = None
+        self.tags = set()
+        self.subtasks = []
+    
+    def _generate_id(self):
+        """Generate unique task ID"""
+        return f"task_{datetime.now().strftime('%Y%m%d_%H%M%S_%f')}"
+    
+    def mark_completed(self):
+        """Mark task as completed"""
+        self.status = "completed"
+        self.completed_date = datetime.now()
+
+class TaskManager:
+    """Main task management system"""
+    def __init__(self):
+        self.users = {}  # username -> User object
+        self.current_user = None
+        self.task_queue = deque()  # For task scheduling
+        self.search_history = []   # Recently searched terms
+    
+    def register_user(self, username, email, password):
+        """Register new user with validation"""
+        try:
+            if username in self.users:
+                raise ValueError("Username already exists")
+            if not self._validate_email(email):
+                raise ValueError("Invalid email format")
+            if len(password) < 6:
+                raise ValueError("Password must be at least 6 characters")
+            
+            user = User(username, email, password)
+            self.users[username] = user
+            print(f"✅ User {username} registered successfully!")
+            return True
+            
+        except ValueError as e:
+            print(f"❌ Registration failed: {e}")
+            return False
+    
+    def _validate_email(self, email):
+        """Simple email validation"""
+        return "@" in email and "." in email.split("@")[1]
+
+# Start building your complete system here!
+print("🎓 FINAL CAPSTONE PROJECT")
+print("=" * 50)
+print("Build your Smart Task Management System!")
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎯 Your Ultimate Mission</h2>
+                    
+                    <div class="challenge">
+                        <h3>🏆 Final Capstone Challenge</h3>
+                        <p>Build the complete Smart Task Management System that demonstrates mastery of <strong>all 18 lessons</strong>!</p>
+                        
+                        <div class="hint">
+                            <strong>🚀 System Requirements:</strong>
+                            <ol>
+                                <li><strong>User System</strong> - Registration, login, profiles</li>
+                                <li><strong>Task CRUD</strong> - Create, read, update, delete tasks</li>
+                                <li><strong>Smart Search</strong> - Binary search for efficiency</li>
+                                <li><strong>Intelligent Sorting</strong> - Multiple sort criteria</li>
+                                <li><strong>Project Management</strong> - Group and organize tasks</li>
+                                <li><strong>Analytics Engine</strong> - Track productivity metrics</li>
+                                <li><strong>Interactive Dashboard</strong> - Beautiful text-based UI</li>
+                                <li><strong>Data Persistence</strong> - Save/load all data</li>
+                                <li><strong>Error Handling</strong> - Graceful error recovery</li>
+                                <li><strong>Performance Optimization</strong> - Efficient algorithms</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎨 Advanced Features to Implement</h2>
+                    
+                    <div class="exercise">
+                        <h3>🌟 Feature 1: Smart Scheduling Algorithm</h3>
+                        <p>Implement an algorithm that automatically schedules tasks based on priority, deadlines, and estimated time.</p>
+                        <div class="hint">
+                            <strong>Concepts Used:</strong> Classes, algorithms, date/time, priority queues
+                        </div>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h3>📊 Feature 2: Productivity Analytics</h3>
+                        <p>Create a comprehensive analytics system that tracks user productivity patterns and generates insights.</p>
+                        <div class="hint">
+                            <strong>Concepts Used:</strong> Data structures, math operations, string formatting, visualization
+                        </div>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h3>🔍 Feature 3: Advanced Search Engine</h3>
+                        <p>Build a multi-criteria search system with autocomplete, fuzzy matching, and search suggestions.</p>
+                        <div class="hint">
+                            <strong>Concepts Used:</strong> Search algorithms, string manipulation, data structures
+                        </div>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h3>🤖 Feature 4: AI Task Recommendations</h3>
+                        <p>Create an AI-like system that suggests tasks based on user patterns and context.</p>
+                        <div class="hint">
+                            <strong>Concepts Used:</strong> Pattern recognition, data analysis, machine learning basics
+                        </div>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h3>🌐 Feature 5: Team Collaboration</h3>
+                        <p>Add team features allowing users to share projects and collaborate on tasks.</p>
+                        <div class="hint">
+                            <strong>Concepts Used:</strong> User management, data sharing, permissions, notifications
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🏅 Mastery Demonstration Checklist</h2>
+                    <div class="success-box">
+                        <h3>✅ Your project should demonstrate:</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <h4>🏗️ Foundation (Lessons 1-6)</h4>
+                                <ul>
+                                    <li>☐ Print statements for UI</li>
+                                    <li>☐ Variables for data storage</li>
+                                    <li>☐ Math operations for calculations</li>
+                                    <li>☐ String manipulation for formatting</li>
+                                    <li>☐ User input for interaction</li>
+                                    <li>☐ Conditional logic for decisions</li>
+                                </ul>
+                                
+                                <h4>🎮 Intermediate (Lessons 8-12)</h4>
+                                <ul>
+                                    <li>☐ Lists for collections</li>
+                                    <li>☐ Loops for iteration</li>
+                                    <li>☐ Functions for organization</li>
+                                    <li>☐ Dictionaries for key-value data</li>
+                                    <li>☐ Exception handling for robustness</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>🚀 Advanced (Lessons 14-16)</h4>
+                                <ul>
+                                    <li>☐ Classes for object modeling</li>
+                                    <li>☐ Inheritance for code reuse</li>
+                                    <li>☐ Data structures for efficiency</li>
+                                    <li>☐ Search algorithms for finding</li>
+                                    <li>☐ Sorting algorithms for ordering</li>
+                                    <li>☐ Performance optimization</li>
+                                </ul>
+                                
+                                <h4>🏆 Professional (Integration)</h4>
+                                <ul>
+                                    <li>☐ Clean, readable code</li>
+                                    <li>☐ Modular architecture</li>
+                                    <li>☐ Comprehensive error handling</li>
+                                    <li>☐ User-friendly interface</li>
+                                    <li>☐ Real-world applicability</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎉 Congratulations - You're a Python Developer!</h2>
+                    <div class="success-box">
+                        <h3>🌟 You've Completed the Ultimate Python Journey!</h3>
+                        <p>By building this capstone project, you've demonstrated mastery of:</p>
+                        <ul>
+                            <li>🏗️ <strong>Object-Oriented Programming</strong> - Building scalable, maintainable code</li>
+                            <li>🗂️ <strong>Data Structures & Algorithms</strong> - Solving problems efficiently</li>
+                            <li>🎯 <strong>System Design</strong> - Architecting complete applications</li>
+                            <li>🛡️ <strong>Error Handling</strong> - Writing robust, production-ready code</li>
+                            <li>🚀 <strong>Performance Optimization</strong> - Creating fast, efficient programs</li>
+                            <li>🎨 <strong>User Experience</strong> - Building intuitive interfaces</li>
+                            <li>📊 <strong>Data Analysis</strong> - Processing and visualizing information</li>
+                            <li>🔍 <strong>Problem Solving</strong> - Breaking down complex challenges</li>
+                        </ul>
+                        
+                        <p><strong>🚀 You're now ready for:</strong></p>
+                        <ul>
+                            <li>🌐 Web development with frameworks like Django or Flask</li>
+                            <li>📊 Data science and machine learning</li>
+                            <li>🤖 Automation and scripting</li>
+                            <li>🎮 Game development</li>
+                            <li>☁️ Cloud computing and DevOps</li>
+                            <li>💼 Professional software development</li>
+                        </ul>
+                        
+                        <p><strong>🎓 Congratulations, Python Developer!</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="python-runner-frame">
+                <div class="runner-header">
+                    <h3>🎓 Capstone Builder</h3>
+                    <button class="runner-toggle" onclick="togglePythonRunner()">◀</button>
+                </div>
+                <div class="runner-content">
+                    <div class="runner-editor">
+                        <div class="code-editor-container">
+                            <div class="line-numbers" id="lineNumbers">1</div>
+                            <textarea id="pythonCode" class="code-editor" spellcheck="false" placeholder="Build your Final Capstone Project here!
+
+# Smart Task Management System
+# Demonstrate ALL Python concepts you've learned!
+
+# Start with the core classes and build your complete system:
+
+class User:
+    def __init__(self, username, email):
+        self.username = username
+        self.email = email
+        self.tasks = []
+        self.projects = {}
+    
+    def add_task(self, title, priority=3):
+        task = Task(title, priority)
+        self.tasks.append(task)
+        print(f'Added task: {title}')
+
+class Task:
+    def __init__(self, title, priority=3):
+        self.title = title
+        self.priority = priority
+        self.completed = False
+    
+    def complete(self):
+        self.completed = True
+        print(f'Completed: {self.title}')
+
+# Build your complete system here!
+user = User('student', 'student@example.com')
+user.add_task('Complete Python Course', 1)
+user.tasks[0].complete()"></textarea>
+                        </div>
+                    </div>
+                    <div class="runner-controls">
+                        <button class="run-button" onclick="runPythonCode()">
+                            <span>🚀 Launch Capstone!</span>
+                        </button>
+                        <button class="clear-button" onclick="clearPythonCode()">
+                            🗑️ Clear
+                        </button>
+                    </div>
+                    <div class="runner-output">
+                        <div class="output-header">
+                            <span>🎓 Capstone Output:</span>
+                            <button class="clear-output-button" onclick="clearOutput()">Clear Output</button>
+                        </div>
+                        <div id="pythonOutput" class="output-content"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js?v=1751263721"></script>
+</body>
+</html> 

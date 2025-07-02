@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 16: Algorithms - Python Learning Course</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css?v=1751263721">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.12.0/brython.min.js"></script>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>🐍 Python Course</h2>
+                <a href="index.html">← Back to Course</a>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="lesson1.html" class="lesson-link">
+                    <div class="lesson-number">1</div>
+                    <span>Running Python Online & Printing</span>
+                </a>
+                <a href="lesson2.html" class="lesson-link">
+                    <div class="lesson-number">2</div>
+                    <span>Variables and Data Types</span>
+                </a>
+                <a href="lesson3.html" class="lesson-link">
+                    <div class="lesson-number">3</div>
+                    <span>Basic Arithmetic</span>
+                </a>
+                <a href="lesson4.html" class="lesson-link">
+                    <div class="lesson-number">4</div>
+                    <span>String Manipulation</span>
+                </a>
+                <a href="lesson5.html" class="lesson-link">
+                    <div class="lesson-number">5</div>
+                    <span>Input from User</span>
+                </a>
+                <a href="lesson6.html" class="lesson-link">
+                    <div class="lesson-number">6</div>
+                    <span>Conditions and If-Else</span>
+                </a>
+                <a href="lesson7.html" class="lesson-link">
+                    <div class="lesson-number">7</div>
+                    <span>Python Adventure Generator</span>
+                </a>
+                <a href="lesson8.html" class="lesson-link">
+                    <div class="lesson-number">8</div>
+                    <span>Lists</span>
+                </a>
+                <a href="lesson9.html" class="lesson-link">
+                    <div class="lesson-number">9</div>
+                    <span>Loops</span>
+                </a>
+                <a href="lesson10.html" class="lesson-link">
+                    <div class="lesson-number">10</div>
+                    <span>Functions</span>
+                </a>
+                <a href="lesson11.html" class="lesson-link">
+                    <div class="lesson-number">11</div>
+                    <span>Dictionaries</span>
+                </a>
+                <a href="lesson12.html" class="lesson-link">
+                    <div class="lesson-number">12</div>
+                    <span>Simple Error Handling</span>
+                </a>
+                <a href="lesson13.html" class="lesson-link">
+                    <div class="lesson-number">13</div>
+                    <span>Ultimate Python RPG Builder</span>
+                </a>
+                <a href="lesson14.html" class="lesson-link">
+                    <div class="lesson-number">14</div>
+                    <span>Classes and Objects</span>
+                </a>
+                <a href="lesson15.html" class="lesson-link">
+                    <div class="lesson-number">15</div>
+                    <span>Data Structures</span>
+                </a>
+                <a href="lesson16.html" class="lesson-link active">
+                    <div class="lesson-number">16</div>
+                    <span>Algorithms</span>
+                </a>
+                <a href="lesson17.html" class="lesson-link">
+                    <div class="lesson-number">17</div>
+                    <span>Advanced Review Project</span>
+                </a>
+                <a href="lesson18.html" class="lesson-link">
+                    <div class="lesson-number">18</div>
+                    <span>Final Capstone Project</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content">
+                <div class="lesson-header">
+                    <h1>Lesson 16: Algorithms</h1>
+                    <p class="goal">🧠 Master essential algorithms for sorting, searching, and problem-solving!</p>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🧠 What are Algorithms?</h2>
+                    <p>An algorithm is a step-by-step procedure for solving a problem. Think of it as a recipe - it tells you exactly what to do and in what order to achieve your goal!</p>
+                    
+                    <div class="info-box">
+                        <h3>🎯 Key Algorithm Categories We'll Learn</h3>
+                        <ul>
+                            <li><strong>Sorting Algorithms</strong> - Arrange data in order (bubble, selection, merge sort)</li>
+                            <li><strong>Searching Algorithms</strong> - Find specific items (linear, binary search)</li>
+                            <li><strong>Algorithm Analysis</strong> - Understanding time and space complexity</li>
+                            <li><strong>Optimization</strong> - Making algorithms faster and more efficient</li>
+                            <li><strong>Real-World Applications</strong> - Where these algorithms are used</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🔍 Step 1: Searching Algorithms</h2>
+                    <p>Let's start with finding things! Searching is one of the most fundamental operations in programming.</p>
+                    
+                    <h3>📍 Linear Search - Check Every Item</h3>
+                    <div class="code-block">
+def linear_search(arr, target):
+    """
+    Search for target in array by checking each element
+    Time Complexity: O(n) - might need to check every element
+    Space Complexity: O(1) - uses constant extra space
+    """
+    comparisons = 0
+    
+    for i in range(len(arr)):
+        comparisons += 1
+        if arr[i] == target:
+            print(f"✅ Found {target} at index {i} after {comparisons} comparisons")
+            return i
+    
+    print(f"❌ {target} not found after {comparisons} comparisons")
+    return -1
+
+# Demo linear search
+print("🔍 LINEAR SEARCH DEMO")
+print("=" * 40)
+
+numbers = [64, 34, 25, 12, 22, 11, 90, 88, 76, 50]
+print(f"Array: {numbers}")
+
+# Search for different values
+linear_search(numbers, 22)  # Found
+linear_search(numbers, 99)  # Not found
+linear_search(numbers, 64)  # Found at beginning
+linear_search(numbers, 50)  # Found at end
+                    </div>
+
+                    <h3>⚡ Binary Search - Divide and Conquer</h3>
+                    <div class="code-block">
+def binary_search(arr, target):
+    """
+    Search for target in SORTED array by repeatedly halving search space
+    Time Complexity: O(log n) - much faster than linear search!
+    Space Complexity: O(1) - uses constant extra space
+    """
+    left = 0
+    right = len(arr) - 1
+    comparisons = 0
+    
+    while left <= right:
+        comparisons += 1
+        mid = (left + right) // 2
+        mid_value = arr[mid]
+        
+        print(f"  Comparison {comparisons}: checking index {mid} (value {mid_value})")
+        
+        if mid_value == target:
+            print(f"✅ Found {target} at index {mid} after {comparisons} comparisons")
+            return mid
+        elif mid_value < target:
+            left = mid + 1  # Search right half
+            print(f"    Target is larger, searching right half")
+        else:
+            right = mid - 1  # Search left half
+            print(f"    Target is smaller, searching left half")
+    
+    print(f"❌ {target} not found after {comparisons} comparisons")
+    return -1
+
+# Demo binary search (requires sorted array!)
+print("\n⚡ BINARY SEARCH DEMO")
+print("=" * 40)
+
+sorted_numbers = [11, 12, 22, 25, 34, 50, 64, 76, 88, 90]
+print(f"Sorted Array: {sorted_numbers}")
+
+# Search for different values
+print("\nSearching for 25:")
+binary_search(sorted_numbers, 25)
+
+print("\nSearching for 99:")
+binary_search(sorted_numbers, 99)
+
+print("\nSearching for 11:")
+binary_search(sorted_numbers, 11)
+
+# Comparison: Linear vs Binary Search
+print("\n📊 SEARCH COMPARISON")
+print("=" * 40)
+large_array = list(range(1, 1001))  # 1 to 1000
+
+print("Searching for 789 in array of 1000 elements:")
+print("Linear Search:")
+linear_search(large_array, 789)
+print("\nBinary Search:")
+binary_search(large_array, 789)
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🔄 Step 2: Sorting Algorithms</h2>
+                    <p>Sorting is arranging data in order. Let's explore different approaches from simple to sophisticated!</p>
+                    
+                    <h3>🫧 Bubble Sort - Simple but Slow</h3>
+                    <div class="code-block">
+def bubble_sort(arr):
+    """
+    Sort array by repeatedly swapping adjacent elements if they're in wrong order
+    Time Complexity: O(n²) - slow for large arrays
+    Space Complexity: O(1) - sorts in-place
+    """
+    arr = arr.copy()  # Don't modify original
+    n = len(arr)
+    swaps = 0
+    
+    print(f"🫧 Bubble Sort starting with: {arr}")
+    
+    for i in range(n):
+        # Flag to optimize - if no swaps, array is sorted
+        swapped = False
+        
+        # Last i elements are already sorted
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                # Swap elements
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+                swaps += 1
+        
+        print(f"  After pass {i + 1}: {arr}")
+        
+        # If no swapping happened, array is sorted
+        if not swapped:
+            print(f"  🎉 Sorted early! No swaps needed.")
+            break
+    
+    print(f"✅ Sorted: {arr} (Total swaps: {swaps})")
+    return arr
+
+# Demo bubble sort
+print("🫧 BUBBLE SORT DEMO")
+print("=" * 40)
+bubble_sort([64, 34, 25, 12, 22, 11, 90])
+                    </div>
+
+                    <h3>🎯 Selection Sort - Find and Place</h3>
+                    <div class="code-block">
+def selection_sort(arr):
+    """
+    Sort array by repeatedly finding minimum element and placing it at beginning
+    Time Complexity: O(n²) - same as bubble sort
+    Space Complexity: O(1) - sorts in-place
+    """
+    arr = arr.copy()
+    n = len(arr)
+    
+    print(f"🎯 Selection Sort starting with: {arr}")
+    
+    for i in range(n):
+        # Find minimum element in remaining unsorted array
+        min_idx = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        
+        # Swap found minimum element with first element
+        if min_idx != i:
+            arr[i], arr[min_idx] = arr[min_idx], arr[i]
+            print(f"  Step {i + 1}: Placed {arr[i]} at position {i}")
+            print(f"           Array: {arr}")
+    
+    print(f"✅ Sorted: {arr}")
+    return arr
+
+# Demo selection sort
+print("\n🎯 SELECTION SORT DEMO")
+print("=" * 40)
+selection_sort([64, 34, 25, 12, 22, 11, 90])
+                    </div>
+
+                    <h3>📝 Insertion Sort - Build Sorted Portion</h3>
+                    <div class="code-block">
+def insertion_sort(arr):
+    """
+    Sort array by building sorted portion one element at a time
+    Time Complexity: O(n²) worst case, O(n) best case
+    Space Complexity: O(1) - sorts in-place
+    """
+    arr = arr.copy()
+    
+    print(f"📝 Insertion Sort starting with: {arr}")
+    
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        
+        print(f"  Step {i}: Inserting {key}")
+        
+        # Move elements greater than key one position ahead
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+        
+        arr[j + 1] = key
+        print(f"          Result: {arr}")
+    
+    print(f"✅ Sorted: {arr}")
+    return arr
+
+# Demo insertion sort
+print("\n📝 INSERTION SORT DEMO")
+print("=" * 40)
+insertion_sort([64, 34, 25, 12, 22, 11, 90])
+                    </div>
+
+                    <h3>🚀 Merge Sort - Divide and Conquer</h3>
+                    <div class="code-block">
+def merge_sort(arr, depth=0):
+    """
+    Sort array using divide-and-conquer approach
+    Time Complexity: O(n log n) - much better than previous algorithms!
+    Space Complexity: O(n) - uses additional space for merging
+    """
+    indent = "  " * depth
+    
+    if len(arr) <= 1:
+        return arr
+    
+    print(f"{indent}🔄 Dividing: {arr}")
+    
+    # Divide
+    mid = len(arr) // 2
+    left = arr[:mid]
+    right = arr[mid:]
+    
+    # Conquer
+    left_sorted = merge_sort(left, depth + 1)
+    right_sorted = merge_sort(right, depth + 1)
+    
+    # Merge
+    merged = merge(left_sorted, right_sorted)
+    print(f"{indent}🔗 Merged: {merged}")
+    
+    return merged
+
+def merge(left, right):
+    """Merge two sorted arrays into one sorted array"""
+    result = []
+    i = j = 0
+    
+    # Compare elements and merge in sorted order
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    
+    # Add remaining elements
+    result.extend(left[i:])
+    result.extend(right[j:])
+    
+    return result
+
+# Demo merge sort
+print("\n🚀 MERGE SORT DEMO")
+print("=" * 40)
+unsorted = [64, 34, 25, 12, 22, 11, 90]
+print(f"Original: {unsorted}")
+sorted_result = merge_sort(unsorted)
+print(f"✅ Final Result: {sorted_result}")
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>📊 Step 3: Algorithm Analysis & Comparison</h2>
+                    <p>Understanding how algorithms perform helps you choose the right one for your needs!</p>
+                    
+                    <div class="code-block">
+import time
+import random
+
+def time_algorithm(sort_function, arr, name):
+    """Measure how long a sorting algorithm takes"""
+    arr_copy = arr.copy()
+    start_time = time.time()
+    sort_function(arr_copy)
+    end_time = time.time()
+    duration = end_time - start_time
+    print(f"{name}: {duration:.6f} seconds")
+    return duration
+
+def compare_algorithms():
+    """Compare different sorting algorithms"""
+    print("⏱️ ALGORITHM PERFORMANCE COMPARISON")
+    print("=" * 50)
+    
+    # Test with different array sizes
+    sizes = [100, 500, 1000]
+    
+    for size in sizes:
+        print(f"\n📊 Testing with {size} random numbers:")
+        test_array = [random.randint(1, 1000) for _ in range(size)]
+        
+        # Time each algorithm (simplified versions that don't print steps)
+        def simple_bubble_sort(arr):
+            n = len(arr)
+            for i in range(n):
+                for j in range(0, n - i - 1):
+                    if arr[j] > arr[j + 1]:
+                        arr[j], arr[j + 1] = arr[j + 1], arr[j]
+        
+        def simple_insertion_sort(arr):
+            for i in range(1, len(arr)):
+                key = arr[i]
+                j = i - 1
+                while j >= 0 and arr[j] > key:
+                    arr[j + 1] = arr[j]
+                    j -= 1
+                arr[j + 1] = key
+        
+        def simple_merge_sort(arr):
+            if len(arr) <= 1:
+                return arr
+            mid = len(arr) // 2
+            left = simple_merge_sort(arr[:mid])
+            right = simple_merge_sort(arr[mid:])
+            return merge(left, right)
+        
+        # Compare algorithms
+        bubble_time = time_algorithm(simple_bubble_sort, test_array, "Bubble Sort   ")
+        insertion_time = time_algorithm(simple_insertion_sort, test_array, "Insertion Sort")
+        merge_time = time_algorithm(lambda arr: simple_merge_sort(arr), test_array, "Merge Sort    ")
+        
+        # Built-in Python sort for comparison
+        python_time = time_algorithm(lambda arr: arr.sort(), test_array, "Python sort() ")
+        
+        print(f"  💡 Merge sort is {bubble_time/merge_time:.1f}x faster than bubble sort!")
+
+# Run comparison
+compare_algorithms()
+
+# Big O notation explanation
+print("\n📈 BIG O NOTATION - ALGORITHM COMPLEXITY")
+print("=" * 50)
+print("⏱️ Time Complexity (how time grows with input size):")
+print("  O(1)      - Constant time (accessing array element)")
+print("  O(log n)  - Logarithmic (binary search)")
+print("  O(n)      - Linear (linear search)")
+print("  O(n log n)- Linearithmic (merge sort, quicksort)")
+print("  O(n²)     - Quadratic (bubble sort, selection sort)")
+print("  O(2^n)    - Exponential (some recursive algorithms)")
+print()
+print("💾 Space Complexity (how memory usage grows):")
+print("  O(1)      - Constant space (bubble sort)")
+print("  O(n)      - Linear space (merge sort)")
+print()
+print("🎯 Generally: O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2^n)")
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎯 Step 4: Real-World Algorithm Applications</h2>
+                    <p>Let's see how these algorithms are used in real applications!</p>
+                    
+                    <div class="code-block">
+# Application 1: Student Grade Ranking System
+class Student:
+    def __init__(self, name, grade):
+        self.name = name
+        self.grade = grade
+    
+    def __repr__(self):
+        return f"{self.name}({self.grade})"
+
+def rank_students_by_grade(students):
+    """Sort students by grade using merge sort approach"""
+    print("🎓 STUDENT RANKING SYSTEM")
+    print("=" * 40)
+    
+    # Sort students by grade (descending)
+    sorted_students = sorted(students, key=lambda s: s.grade, reverse=True)
+    
+    print("📊 Class Rankings:")
+    for i, student in enumerate(sorted_students, 1):
+        print(f"  {i}. {student.name}: {student.grade}%")
+    
+    return sorted_students
+
+# Create students
+students = [
+    Student("Alice", 95),
+    Student("Bob", 87),
+    Student("Charlie", 92),
+    Student("Diana", 98),
+    Student("Eve", 89),
+    Student("Frank", 94)
+]
+
+ranked = rank_students_by_grade(students)
+
+print("\n" + "=" * 60)
+
+# Application 2: Inventory Search System
+class Product:
+    def __init__(self, id, name, price, stock):
+        self.id = id
+        self.name = name
+        self.price = price
+        self.stock = stock
+    
+    def __repr__(self):
+        return f"{self.name}(${self.price}, Stock: {self.stock})"
+
+def inventory_system():
+    """Demonstrate search algorithms in inventory management"""
+    print("📦 INVENTORY SEARCH SYSTEM")
+    print("=" * 40)
+    
+    # Create inventory (sorted by ID for binary search)
+    inventory = [
+        Product(101, "Laptop", 999.99, 15),
+        Product(102, "Mouse", 29.99, 50),
+        Product(103, "Keyboard", 79.99, 30),
+        Product(104, "Monitor", 299.99, 20),
+        Product(105, "Webcam", 89.99, 25),
+        Product(106, "Headphones", 149.99, 35),
+        Product(107, "Speaker", 199.99, 12),
+        Product(108, "Microphone", 119.99, 18),
+        Product(109, "Tablet", 599.99, 8),
+        Product(110, "Phone", 799.99, 22)
+    ]
+    
+    def search_by_id(product_id):
+        """Binary search for product by ID"""
+        left, right = 0, len(inventory) - 1
+        
+        while left <= right:
+            mid = (left + right) // 2
+            if inventory[mid].id == product_id:
+                return inventory[mid]
+            elif inventory[mid].id < product_id:
+                left = mid + 1
+            else:
+                right = mid - 1
+        return None
+    
+    def search_by_name(product_name):
+        """Linear search for product by name"""
+        for product in inventory:
+            if product.name.lower() == product_name.lower():
+                return product
+        return None
+    
+    def search_by_price_range(min_price, max_price):
+        """Find products in price range"""
+        results = []
+        for product in inventory:
+            if min_price <= product.price <= max_price:
+                results.append(product)
+        return results
+    
+    # Demonstrate searches
+    print("🔍 Searching by ID (Binary Search):")
+    product = search_by_id(105)
+    print(f"  Product 105: {product}")
+    
+    print("\n🔍 Searching by Name (Linear Search):")
+    product = search_by_name("Monitor")
+    print(f"  Monitor: {product}")
+    
+    print("\n🔍 Price Range Search ($100-$200):")
+    products = search_by_price_range(100, 200)
+    for product in products:
+        print(f"  {product}")
+    
+    print("\n📊 Performance Notes:")
+    print("  - ID search: O(log n) - very fast with binary search")
+    print("  - Name search: O(n) - must check all products")
+    print("  - Price range: O(n) - must check all products")
+
+inventory_system()
+
+print("\n" + "=" * 60)
+
+# Application 3: Task Priority System
+class Task:
+    def __init__(self, name, priority, deadline):
+        self.name = name
+        self.priority = priority  # 1 = highest, 5 = lowest
+        self.deadline = deadline
+    
+    def __repr__(self):
+        return f"{self.name}(P{self.priority}, Due: {self.deadline})"
+
+def task_scheduler():
+    """Sort tasks by priority and deadline"""
+    print("📅 TASK SCHEDULING SYSTEM")
+    print("=" * 40)
+    
+    tasks = [
+        Task("Fix bug #123", 1, "2024-01-15"),
+        Task("Write documentation", 3, "2024-01-20"),
+        Task("Code review", 2, "2024-01-16"),
+        Task("Team meeting", 2, "2024-01-14"),
+        Task("Deploy to production", 1, "2024-01-17"),
+        Task("Update dependencies", 4, "2024-01-25"),
+        Task("Backup database", 3, "2024-01-18")
+    ]
+    
+    # Sort by priority first, then by deadline
+    sorted_tasks = sorted(tasks, key=lambda t: (t.priority, t.deadline))
+    
+    print("📋 Tasks sorted by priority and deadline:")
+    for i, task in enumerate(sorted_tasks, 1):
+        print(f"  {i}. {task}")
+    
+    print("\n💡 Sorting Key: (priority, deadline)")
+    print("   - Lower priority number = higher importance")
+    print("   - Earlier deadline comes first for same priority")
+
+task_scheduler()
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>💡 Algorithm Selection Guide</h2>
+                    <div class="concept-grid">
+                        <div class="concept-item">
+                            <h3>🔍 When to Use Each Search</h3>
+                            <ul>
+                                <li><strong>Linear Search</strong>: Unsorted data, small datasets</li>
+                                <li><strong>Binary Search</strong>: Sorted data, large datasets</li>
+                                <li><strong>Hash Tables</strong>: Very large datasets, O(1) lookup</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="concept-item">
+                            <h3>🔄 When to Use Each Sort</h3>
+                            <ul>
+                                <li><strong>Bubble/Selection</strong>: Learning, very small datasets</li>
+                                <li><strong>Insertion</strong>: Small/nearly sorted datasets</li>
+                                <li><strong>Merge</strong>: Stable sort needed, guaranteed O(n log n)</li>
+                                <li><strong>Quick</strong>: Average case performance, in-place sorting</li>
+                                <li><strong>Python's sorted()</strong>: Production code (uses Timsort)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎯 Practice Exercises</h2>
+                    
+                    <div class="exercise">
+                        <h3>Exercise 1: Custom Sorting</h3>
+                        <p>Implement a function that sorts a list of dictionaries by multiple criteria (e.g., sort employees by department, then by salary).</p>
+                        <div class="hint">
+                            <strong>Hint:</strong> Use sorted() with a custom key function that returns a tuple.
+                        </div>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h3>Exercise 2: Binary Search Variations</h3>
+                        <p>Implement binary search to find the first/last occurrence of a target in an array with duplicates.</p>
+                        <div class="hint">
+                            <strong>Hint:</strong> Modify the condition to continue searching even after finding the target.
+                        </div>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h3>Exercise 3: Algorithm Visualization</h3>
+                        <p>Create a function that shows the step-by-step process of any sorting algorithm with visual output.</p>
+                        <div class="hint">
+                            <strong>Hint:</strong> Use print statements to show array state after each swap or comparison.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🏆 Challenge: Algorithm Optimization Lab</h2>
+                    <div class="challenge">
+                        <h3>Challenge: Multi-Algorithm Comparison Tool</h3>
+                        <p>Build a comprehensive tool that:</p>
+                        <ul>
+                            <li>Implements multiple sorting and searching algorithms</li>
+                            <li>Measures and compares their performance</li>
+                            <li>Visualizes algorithm steps and complexity</li>
+                            <li>Recommends the best algorithm for given conditions</li>
+                            <li>Handles different data types and edge cases</li>
+                        </ul>
+                        <div class="hint">
+                            <strong>Advanced Features:</strong> Add algorithm animation, complexity graphs, and real-world use case examples.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🎉 Congratulations!</h2>
+                    <div class="success-box">
+                        <h3>🌟 You've Mastered Fundamental Algorithms!</h3>
+                        <p>You now understand:</p>
+                        <ul>
+                            <li>✅ Linear and binary search algorithms</li>
+                            <li>✅ Bubble, selection, insertion, and merge sort</li>
+                            <li>✅ Big O notation and complexity analysis</li>
+                            <li>✅ When to choose each algorithm</li>
+                            <li>✅ Real-world applications and optimizations</li>
+                            <li>✅ Performance measurement and comparison</li>
+                        </ul>
+                        <p><strong>🚀 Ready to build advanced projects with efficient algorithms!</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python Runner Frame -->
+            <div class="python-runner-frame">
+                <div class="runner-header">
+                    <h3>🧠 Algorithm Lab</h3>
+                    <button class="runner-toggle" onclick="togglePythonRunner()">◀</button>
+                </div>
+                <div class="runner-content">
+                    <div class="runner-editor">
+                        <div class="code-editor-container">
+                            <div class="line-numbers" id="lineNumbers">1</div>
+                            <textarea id="pythonCode" class="code-editor" spellcheck="false" placeholder="Experiment with algorithms here!
+
+# Try different algorithms:
+
+# Linear Search
+def linear_search(arr, target):
+    for i, item in enumerate(arr):
+        if item == target:
+            return i
+    return -1
+
+# Binary Search (requires sorted array)
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+
+# Test the algorithms
+numbers = [1, 3, 5, 7, 9, 11, 13, 15]
+print(f'Array: {numbers}')
+print(f'Linear search for 7: {linear_search(numbers, 7)}')
+print(f'Binary search for 7: {binary_search(numbers, 7)}')
+
+# Simple bubble sort
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
+
+unsorted = [64, 34, 25, 12, 22, 11, 90]
+print(f'Original: {unsorted}')
+print(f'Sorted: {bubble_sort(unsorted.copy())}')"></textarea>
+                        </div>
+                    </div>
+                    <div class="runner-controls">
+                        <button class="run-button" onclick="runPythonCode()">
+                            <span>🚀 Run Algorithms!</span>
+                        </button>
+                        <button class="clear-button" onclick="clearPythonCode()">
+                            🗑️ Clear
+                        </button>
+                    </div>
+                    <div class="runner-output">
+                        <div class="output-header">
+                            <span>🧠 Algorithm Output:</span>
+                            <button class="clear-output-button" onclick="clearOutput()">Clear Output</button>
+                        </div>
+                        <div id="pythonOutput" class="output-content"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js?v=1751263721"></script>
+</body>
+</html> 
