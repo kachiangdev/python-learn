@@ -329,6 +329,15 @@ function clearPythonCode() {
     }
 }
 
+function clearOutput() {
+    const outputDisplay = document.getElementById('output');
+    
+    if (outputDisplay) {
+        outputDisplay.innerHTML = '<em>Click "Run Code" to see the output here</em>';
+        outputDisplay.className = 'output-display';
+    }
+}
+
 function loadLessonExamples(lessonNumber) {
     const codeEditor = document.getElementById('pythonCode');
     const lessonCodeBlocks = document.querySelectorAll('.code-block');
