@@ -8,6 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css?v=1751263721">
     <script src="https://cdn.jsdelivr.net/npm/brython@3.12.0/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.12.0/brython_stdlib.js"></script>
 </head>
 <body>
     <div class="page-container">
@@ -68,11 +69,27 @@
                 </a>
                 <a href="lesson13.html" class="lesson-link">
                     <div class="lesson-number">13</div>
-                    <span>Ultimate Python RPG Builder</span>
+                    <span>Python RPG Builder</span>
                 </a>
                 <a href="lesson14.html" class="lesson-link">
                     <div class="lesson-number">14</div>
-                    <span>Mini Quiz Game</span>
+                    <span>Classes and Objects</span>
+                </a>
+                <a href="lesson15.html" class="lesson-link">
+                    <div class="lesson-number">15</div>
+                    <span>Data Structures</span>
+                </a>
+                <a href="lesson16.html" class="lesson-link">
+                    <div class="lesson-number">16</div>
+                    <span>Algorithms</span>
+                </a>
+                <a href="lesson17.html" class="lesson-link">
+                    <div class="lesson-number">17</div>
+                    <span>Advanced Review Project</span>
+                </a>
+                <a href="lesson18.html" class="lesson-link">
+                    <div class="lesson-number">18</div>
+                    <span>Final Capstone Project</span>
                 </a>
             </nav>
         </aside>
@@ -163,10 +180,10 @@ print("\n" + "=" * 30)
 print("📊 CALCULATING YOUR STATS...")
 print("=" * 30)
 
-# Base stats using arithmetic operations
-strength = (age * 2) + 10
-magic_power = (len(character_name) * 5) + 15
-luck = (age % 10) + (len(favorite_color) * 2)
+# Base stats using arithmetic operations (Lesson 3: Arithmetic)
+strength = age + 20
+magic_power = len(character_name) * 3 + 10  
+luck = len(favorite_color) * 2 + 5
 total_power = strength + magic_power + luck
 
 # Display stats with formatting (Lesson 1: Printing)
@@ -175,16 +192,21 @@ print(f"🔮 Magic Power: {magic_power}")
 print(f"🍀 Luck: {luck}")
 print(f"⚡ TOTAL POWER: {total_power}")
 
-# Character type based on highest stat (Lesson 6: Conditions)
-if strength > magic_power and strength > luck:
-    character_type = "WARRIOR"
-    special_ability = "Mighty Strike"
-elif magic_power > strength and magic_power > luck:
-    character_type = "WIZARD"
-    special_ability = "Arcane Blast"
+# Character type based on highest stat (Lesson 6: Simple Conditions)
+if strength > magic_power:
+    if strength > luck:
+        character_type = "WARRIOR"
+        special_ability = "Mighty Strike"
+    else:
+        character_type = "ROGUE"
+        special_ability = "Lucky Strike"
 else:
-    character_type = "ROGUE"
-    special_ability = "Lucky Strike"
+    if magic_power > luck:
+        character_type = "WIZARD"
+        special_ability = "Arcane Blast"  
+    else:
+        character_type = "ROGUE"
+        special_ability = "Lucky Strike"
 
 print(f"\n🎭 You are a {character_type}!")
 print(f"✨ Special Ability: {special_ability}")
@@ -236,30 +258,33 @@ print("\n" + "=" * 25)
 print("⚔️  BATTLE TIME!")
 print("=" * 25)
 
-# Calculate success chance based on stats
-success_chance = total_power + (luck * 2)
-required_power = treasure_base + 50
+# Calculate success chance based on stats (Lesson 3: Arithmetic)
+success_chance = total_power + luck
+required_power = treasure_base + 30
 
-if success_chance >= required_power:
+# Simple battle outcome (Lesson 6: Conditions)
+if success_chance > required_power:
     battle_result = "VICTORY"
-    treasure_multiplier = 2.0
+    gold_found = treasure_base * 2
     experience_gained = 100
     print("🎉 VICTORY! You defeated the monster!")
-elif success_chance >= (required_power * 0.7):
-    battle_result = "NARROW VICTORY"
-    treasure_multiplier = 1.5
+elif success_chance > treasure_base:
+    battle_result = "NARROW VICTORY"  
+    gold_found = treasure_base + 20
     experience_gained = 75
     print("😅 NARROW VICTORY! It was a tough fight!")
 else:
     battle_result = "RETREAT"
-    treasure_multiplier = 0.5
+    gold_found = treasure_base - 10
+    if gold_found < 0:  # Make sure gold doesn't go below 0
+        gold_found = 5
     experience_gained = 25
     print("😬 You had to retreat, but you learned something!")
 
-# Calculate rewards (Lesson 3: Arithmetic)
-gold_found = int(treasure_base * treasure_multiplier)
-gems_found = gold_found // 20  # Floor division
-total_treasure_value = gold_found + (gems_found * 15)
+# Calculate rewards (Lesson 3: Simple Arithmetic)
+gems_found = gold_found / 25  # Simple division
+gems_found = int(gems_found)  # Convert to whole number
+total_treasure_value = gold_found + gems_found
 
 print(f"\n💰 Gold Found: {gold_found}")
 print(f"💎 Gems Found: {gems_found}")
@@ -274,25 +299,32 @@ print("\n" + "=" * 40)
 print("📜 YOUR EPIC ADVENTURE STORY")
 print("=" * 40)
 
-# Create dynamic story with all our variables
-adventure_story = f"""
-Once upon a time, {character_name}, a {age}-year-old {character_type.lower()}, 
-embarked on a legendary quest. Wearing {favorite_color.lower()} armor that 
-shimmered in the sunlight, our hero ventured into the {location.lower()}.
+# Create dynamic story with all our variables (Lesson 4: String manipulation)
+print(f"Once upon a time, {character_name}, a {age}-year-old {character_type.lower()},")
+print(f"embarked on a legendary quest. Wearing {favorite_color.lower()} armor that")
+print(f"shimmered in the sunlight, our hero ventured into the {location.lower()}.")
+print()
+print(f"With {strength} strength, {magic_power} magic power, and {luck} luck points,")
+print(f"{character_name} was ready for anything! The journey led to an encounter")
+print(f"with the fearsome {monster.upper()}!")
+print()
+print(f"Using the powerful '{special_ability}' technique, our brave {character_type.lower()}")
+print(f"achieved a {battle_result.lower()}! The adventure yielded {gold_found} gold pieces")
+print(f"and {gems_found} precious gems.")
 
-With {strength} strength, {magic_power} magic power, and {luck} luck points,
-{character_name} was ready for anything! The journey led to an encounter 
-with the fearsome {monster.upper()}!
+# Simple power assessment (Lesson 6: Conditions)
+if total_power > 100:
+    power_description = "mighty"
+else:
+    power_description = "adequate"
 
-Using the powerful "{special_ability}" technique, our brave {character_type.lower()}
-achieved a {battle_result.lower()}! The adventure yielded {gold_found} gold pieces
-and {gems_found} precious gems.
+if danger_level == "High":
+    quest_description = "perilous"
+else:
+    quest_description = "challenging"
 
-{character_name}'s power level of {total_power} proved {"mighty" if total_power > 100 else "adequate"}
-for this {"perilous" if danger_level == "High" else "challenging"} quest!
-"""
-
-print(adventure_story)
+print(f"{character_name}'s power level of {total_power} proved {power_description}")
+print(f"for this {quest_description} quest!")
                     </div>
 
                     <h3>🏆 Step 6: Adventure Rating & Finale</h3>
@@ -302,20 +334,20 @@ print("=" * 40)
 print("🏆 ADVENTURE RATING SYSTEM")
 print("=" * 40)
 
-# Calculate final score using multiple factors
-adventure_score = (total_power * 2) + experience_gained + (total_treasure_value // 10)
+# Calculate final score using multiple factors (Lesson 3: Arithmetic)
+adventure_score = total_power + experience_gained + total_treasure_value
 
-# Determine rating with complex conditions
-if adventure_score >= 500:
+# Determine rating with simple conditions (Lesson 6: Conditions)
+if adventure_score >= 300:
     rating = "LEGENDARY HERO"
     emoji = "🌟"
-elif adventure_score >= 350:
+elif adventure_score >= 250:
     rating = "MASTER ADVENTURER"
     emoji = "🏆"
 elif adventure_score >= 200:
     rating = "SKILLED EXPLORER"
     emoji = "🎖️"
-elif adventure_score >= 100:
+elif adventure_score >= 150:
     rating = "BRAVE WANDERER"
     emoji = "⚔️"
 else:
@@ -327,8 +359,8 @@ print(f"📊 Final Adventure Score: {adventure_score}")
 print(f"{emoji} Adventure Rating: {rating}")
 print()
 
-# Personalized message based on rating
-if adventure_score >= 400:
+# Personalized message based on rating (Lesson 6: Conditions)
+if adventure_score >= 250:
     message = f"Amazing work, {character_name}! You're destined for greatness!"
 elif adventure_score >= 200:
     message = f"Well done, {character_name}! You're becoming a true adventurer!"
@@ -343,7 +375,7 @@ print("📊 FUN ADVENTURE FACTS")
 print("=" * 30)
 print(f"🔤 Your name has {len(character_name)} letters")
 print(f"🎨 Your favorite color '{favorite_color}' has {len(favorite_color)} letters")
-print(f"⚡ Your power is {total_power // 10} times stronger than average!")
+print(f"⚡ Your power level is {total_power} points!")
 print(f"💰 You found {gold_found + gems_found} treasure items total!")
 print(f"📈 Adventure difficulty was {danger_level.upper()}!")
 
@@ -435,7 +467,7 @@ print("\n🎉 Thanks for playing the Python Adventure Generator! 🎉")
                     <div class="runner-editor">
                         <div class="code-editor-container">
                             <div class="line-numbers" id="lineNumbers">1</div>
-                            <textarea id="pythonCode" class="code-editor" spellcheck="false" placeholder="Build your complete Python Adventure Generator here!
+                            <textarea id="pythonCode" class="code-editor" spellcheck="false" placeholder="Build your Python Adventure Generator here!
 
 # Start with:
 # 🎭 PYTHON ADVENTURE GENERATOR 🎭
@@ -443,7 +475,7 @@ print('=' * 50)
 print('🌟 WELCOME TO THE PYTHON ADVENTURE GENERATOR! 🌟')
 print('=' * 50)
 
-# Then add each section from the lesson..."></textarea>
+# Then copy each step from the lesson to build your complete adventure!"></textarea>
                         </div>
                     </div>
                     <div class="runner-controls">

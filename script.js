@@ -556,28 +556,33 @@ else:
     print("C")`
         ],
         7: [
-            `# Simple while loop example
-count = 1
-while count <= 5:
-    print(f"Count: {count}")
-    count += 1
-
-print("Loop finished!")`,
-            `# Random numbers
-import random
-number = random.randint(1, 10)
-print("Random number:", number)`,
-            `# While loop
-count = 1
-while count <= 3:
-    print("Attempt", count)
-    count += 1`,
-            `# Break statement
-while True:
-    answer = input("Type 'quit' to exit: ")
-    if answer == "quit":
-        break
-    print("You typed:", answer)`
+            `# Character creation example (Lesson 5: Input)
+name = input("What's your name? ")
+age = int(input("How old are you? "))
+print(f"Hello {name}, you are {age} years old!")`,
+            `# Character stats calculator (Lesson 3: Arithmetic)
+age = 25
+strength = age + 10
+magic = len("Alice") * 3
+total_power = strength + magic
+print(f"Strength: {strength}")
+print(f"Magic: {magic}")
+print(f"Total Power: {total_power}")`,
+            `# Adventure choice (Lesson 6: Conditions)
+choice = input("Choose 1, 2, or 3: ")
+if choice == "1":
+    adventure = "Castle"
+elif choice == "2":
+    adventure = "Forest"
+else:
+    adventure = "Mountain"
+print(f"You chose: {adventure}")`,
+            `# Story generator (Lesson 4: String manipulation)
+hero = "Alice"
+location = "castle"
+print(f"Once upon a time, {hero.upper()} explored a {location}.")
+print(f"The brave adventurer found treasure!")
+print(f"Hero name has {len(hero)} letters.")`
         ],
         8: [
             `fruits = ["apple", "banana", "cherry"]
@@ -869,42 +874,51 @@ async function initializePython() {
             return;
         }
         
-        // Load Brython from CDN
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/brython@3.12.0/brython.min.js';
-        script.async = true;
+        // Load Brython main library
+        const brythonScript = document.createElement('script');
+        brythonScript.src = 'https://cdn.jsdelivr.net/npm/brython@3.12.0/brython.min.js';
+        brythonScript.async = false; // Load synchronously to ensure order
         
-        script.onload = async () => {
-            try {
-                // Wait a bit for Brython to fully initialize
-                await new Promise(resolve => setTimeout(resolve, 100));
-                
-                // Check if brython function is available
-                if (typeof brython === 'function') {
-                    brythonLoaded = true;
-                    console.log('Brython loaded successfully');
-                } else {
-                    throw new Error('Brython function not available');
-                }
-            } catch (error) {
-                console.error('Failed to initialize Brython:', error);
-                brythonLoaded = false;
-            } finally {
-                brythonInitializing = false;
-            }
-        };
+        // Load Brython standard library
+        const stdlibScript = document.createElement('script');
+        stdlibScript.src = 'https://cdn.jsdelivr.net/npm/brython@3.12.0/brython_stdlib.js';
+        stdlibScript.async = false; // Load synchronously to ensure order
         
-        script.onerror = () => {
-            console.error('Failed to load Brython script');
-            brythonLoaded = false;
-            brythonInitializing = false;
-        };
+        // First load the main Brython library
+        const loadMainScript = new Promise((resolve, reject) => {
+            brythonScript.onload = resolve;
+            brythonScript.onerror = reject;
+            document.head.appendChild(brythonScript);
+        });
         
-        document.head.appendChild(script);
+        await loadMainScript;
+        console.log('Brython main library loaded');
+        
+        // Then load the standard library
+        const loadStdlibScript = new Promise((resolve, reject) => {
+            stdlibScript.onload = resolve;
+            stdlibScript.onerror = reject;
+            document.head.appendChild(stdlibScript);
+        });
+        
+        await loadStdlibScript;
+        console.log('Brython standard library loaded');
+        
+        // Wait a bit for both scripts to fully initialize
+        await new Promise(resolve => setTimeout(resolve, 200));
+        
+        // Check if brython function is available
+        if (typeof brython === 'function') {
+            brythonLoaded = true;
+            console.log('Brython loaded successfully with stdlib');
+        } else {
+            throw new Error('Brython function not available');
+        }
         
     } catch (error) {
         console.error('Failed to initialize Python:', error);
         brythonLoaded = false;
+    } finally {
         brythonInitializing = false;
     }
 }
