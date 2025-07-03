@@ -565,33 +565,73 @@ else:
     print("C")`
         ],
         7: [
-            `# Character creation example (Lesson 5: Input)
+            `# Step 1: Simple welcome message
+print("🎭 WELCOME TO THE ADVENTURE STORY MAKER! 🎭")
+print("Let's create your adventure!")
+print()`,
+            `# Step 2: Get player name
 name = input("What's your name? ")
+print("Hello, " + name + "!")
+print()`,
+            `# Step 3: Get more player info
 age = int(input("How old are you? "))
-print(f"Hello {name}, you are {age} years old!")`,
-            `# Character stats calculator (Lesson 3: Arithmetic)
-age = 25
+favorite_color = input("What's your favorite color? ")
+
+print("Got it! You are " + name + " and you are " + str(age) + " years old.")
+print("Your favorite color is " + favorite_color + ".")
+print()`,
+            `# Step 4: Calculate character points
 strength = age + 10
-magic = len("Alice") * 3
-total_power = strength + magic
-print(f"Strength: {strength}")
-print(f"Magic: {magic}")
-print(f"Total Power: {total_power}")`,
-            `# Adventure choice (Lesson 6: Conditions)
-choice = input("Choose 1, 2, or 3: ")
+magic = len(name) + 5
+luck = len(favorite_color) + 3
+
+print("=== YOUR CHARACTER STATS ===")
+print("Strength: " + str(strength))
+print("Magic: " + str(magic))
+print("Luck: " + str(luck))
+print()`,
+            `# Step 5: Choose your adventure
+print("Where do you want to go?")
+print("1. Forest")
+print("2. Castle")
+print("3. Cave")
+
+choice = input("Pick 1, 2, or 3: ")
+
 if choice == "1":
-    adventure = "Castle"
+    location = "forest"
+    monster = "wolf"
 elif choice == "2":
-    adventure = "Forest"
+    location = "castle"
+    monster = "ghost"
 else:
-    adventure = "Mountain"
-print(f"You chose: {adventure}")`,
-            `# Story generator (Lesson 4: String manipulation)
-hero = "Alice"
-location = "castle"
-print(f"Once upon a time, {hero.upper()} explored a {location}.")
-print(f"The brave adventurer found treasure!")
-print(f"Hero name has {len(hero)} letters.")`
+    location = "cave"
+    monster = "dragon"
+
+print("You chose the " + location + "!")
+print("You meet a " + monster + "!")
+print()`,
+            `# Step 6: Create your story
+print("=== YOUR ADVENTURE STORY ===")
+print(f"Once upon a time, {name} went to a {location}.")
+print(f"With {strength} strength and {magic} magic power,")
+print(f"{name} bravely faced the {monster}!")
+print(f"Using {favorite_color} armor, our hero won the battle!")
+print()`,
+            `# Step 7: Give a rating
+total_points = strength + magic + luck
+print("=== ADVENTURE RATING ===")
+print("Total Points: " + str(total_points))
+
+if total_points > 30:
+    rating = "AMAZING HERO"
+elif total_points > 20:
+    rating = "GOOD ADVENTURER"
+else:
+    rating = "BRAVE BEGINNER"
+
+print("You are a " + rating + "!")
+print("Thanks for playing!")`
         ],
         8: [
             `fruits = ["apple", "banana", "cherry"]

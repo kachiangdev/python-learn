@@ -108,14 +108,14 @@
                     
                     <div class="info-box">
                         <h3>🎮 What You'll Build</h3>
-                        <p>A fun, interactive program that:</p>
+                        <p>A fun, simple program that:</p>
                         <ul>
-                            <li>🧙‍♂️ Creates a personalized adventure character</li>
-                            <li>📊 Calculates character stats using math</li>
-                            <li>🎲 Generates random adventure scenarios</li>
-                            <li>💰 Simulates a treasure calculator</li>
-                            <li>📜 Creates epic adventure stories</li>
-                            <li>🏆 Gives you an adventure rating</li>
+                            <li>👤 Gets your name and details</li>
+                            <li>🧮 Calculates character stats using simple math</li>
+                            <li>🎯 Lets you choose your adventure location</li>
+                            <li>📜 Creates a personalized story with your choices</li>
+                            <li>🏆 Gives you a rating based on your stats</li>
+                            <li>🎉 Uses every concept from lessons 1-6!</li>
                         </ul>
                     </div>
                 </div>
@@ -151,249 +151,120 @@
                 </div>
 
                 <div class="lesson-section">
-                    <h2>🎯 Project: The Complete Adventure Generator</h2>
-                    <p>Let's build this step by step! Copy and run each section, then combine them into one amazing program.</p>
+                    <h2>🎯 Project: Simple Adventure Story</h2>
+                    <p>Let's build a fun story generator step by step! Each step focuses on one concept and can be run by itself.</p>
 
-                    <h3>🏁 Step 1: Welcome & Character Creation</h3>
+                    <h3>🏁 Step 1: Welcome the Player (Lesson 1: Printing)</h3>
                     <div class="code-block">
-# 🎭 PYTHON ADVENTURE GENERATOR 🎭
-print("=" * 50)
-print("🌟 WELCOME TO THE PYTHON ADVENTURE GENERATOR! 🌟")
-print("=" * 50)
+# Simple welcome message
+print("🎭 WELCOME TO THE ADVENTURE STORY MAKER! 🎭")
+print("Let's create your adventure!")
 print()
-
-# Get player information (Lesson 5: Input)
-print("Let's create your character!")
-name = input("🧙‍♂️ What's your character's name? ")
-age = int(input("🎂 How old are you? "))
-favorite_color = input("🎨 What's your favorite color? ")
-
-# String manipulation (Lesson 4)
-character_name = name.title()  # Capitalize first letter
-print(f"\n✨ Welcome, {character_name} the {favorite_color.upper()} adventurer! ✨")
                     </div>
 
-                    <h3>🎲 Step 2: Character Stats Calculator</h3>
+                    <h3>👤 Step 2: Get Player Information (Lesson 5: Input)</h3>
                     <div class="code-block">
-# Calculate character stats (Lesson 3: Arithmetic + Lesson 2: Variables)
-print("\n" + "=" * 30)
-print("📊 CALCULATING YOUR STATS...")
-print("=" * 30)
-
-# Base stats using arithmetic operations (Lesson 3: Arithmetic)
-strength = age + 20
-magic_power = len(character_name) * 3 + 10  
-luck = len(favorite_color) * 2 + 5
-total_power = strength + magic_power + luck
-
-# Display stats with formatting (Lesson 1: Printing)
-print(f"💪 Strength: {strength}")
-print(f"🔮 Magic Power: {magic_power}")
-print(f"🍀 Luck: {luck}")
-print(f"⚡ TOTAL POWER: {total_power}")
-
-# Character type based on highest stat (Lesson 6: Simple Conditions)
-if strength > magic_power:
-    if strength > luck:
-        character_type = "WARRIOR"
-        special_ability = "Mighty Strike"
-    else:
-        character_type = "ROGUE"
-        special_ability = "Lucky Strike"
-else:
-    if magic_power > luck:
-        character_type = "WIZARD"
-        special_ability = "Arcane Blast"  
-    else:
-        character_type = "ROGUE"
-        special_ability = "Lucky Strike"
-
-print(f"\n🎭 You are a {character_type}!")
-print(f"✨ Special Ability: {special_ability}")
+# Get player name
+name = input("What's your name? ")
+print("Hello, " + name + "!")
+print()
                     </div>
 
-                    <h3>⚔️ Step 3: Adventure Scenario Generator</h3>
+                    <h3>🎂 Step 3: Get More Details (Lesson 5: Input + Lesson 2: Variables)</h3>
                     <div class="code-block">
-# Adventure choice (Lesson 5: Input + Lesson 6: Conditions)
-print("\n" + "=" * 35)
-print("🗺️  CHOOSE YOUR ADVENTURE!")
-print("=" * 35)
-print("1. 🏰 Explore the Mysterious Castle")
-print("2. 🌲 Venture into the Enchanted Forest")
-print("3. 🏔️  Climb the Dragon's Mountain")
+# Get more player info
+age = int(input("How old are you? "))
+favorite_color = input("What's your favorite color? ")
 
-choice = input("\nEnter your choice (1, 2, or 3): ")
+# Store the information
+print("Got it! You are " + name + " and you are " + str(age) + " years old.")
+print("Your favorite color is " + favorite_color + ".")
+print()
+                    </div>
 
-# Different adventures based on choice
+                    <h3>🧮 Step 4: Calculate Character Points (Lesson 3: Arithmetic)</h3>
+                    <div class="code-block">
+# Simple math calculations
+strength = age + 10
+magic = len(name) + 5
+luck = len(favorite_color) + 3
+
+# Show the results
+print("=== YOUR CHARACTER STATS ===")
+print("Strength: " + str(strength))
+print("Magic: " + str(magic))
+print("Luck: " + str(luck))
+print()
+                    </div>
+
+                    <h3>🎯 Step 5: Choose Your Adventure (Lesson 6: Conditions)</h3>
+                    <div class="code-block">
+# Simple choice
+print("Where do you want to go?")
+print("1. Forest")
+print("2. Castle")
+print("3. Cave")
+
+choice = input("Pick 1, 2, or 3: ")
+
+# Simple if-else
 if choice == "1":
-    location = "Mysterious Castle"
-    monster = "Stone Guardian"
-    treasure_base = 100
-    danger_level = "Medium"
+    location = "forest"
+    monster = "wolf"
 elif choice == "2":
-    location = "Enchanted Forest"
-    monster = "Forest Troll"
-    treasure_base = 75
-    danger_level = "Low"
-elif choice == "3":
-    location = "Dragon's Mountain"
-    monster = "Ancient Dragon"
-    treasure_base = 200
-    danger_level = "High"
+    location = "castle"
+    monster = "ghost"
 else:
-    location = "Random Portal"
-    monster = "Mysterious Shadow"
-    treasure_base = 50
-    danger_level = "Unknown"
+    location = "cave"
+    monster = "dragon"
 
-print(f"\n🎯 Adventure: {location}")
-print(f"👹 You encounter a {monster}!")
-print(f"⚠️  Danger Level: {danger_level}")
+print("You chose the " + location + "!")
+print("You meet a " + monster + "!")
+print()
                     </div>
 
-                    <h3>💰 Step 4: Battle & Treasure Calculator</h3>
+                    <h3>📜 Step 6: Create Your Story (Lesson 4: String Formatting)</h3>
                     <div class="code-block">
-# Battle outcome (Lesson 6: Conditions + Lesson 3: Math)
-print("\n" + "=" * 25)
-print("⚔️  BATTLE TIME!")
-print("=" * 25)
-
-# Calculate success chance based on stats (Lesson 3: Arithmetic)
-success_chance = total_power + luck
-required_power = treasure_base + 30
-
-# Simple battle outcome (Lesson 6: Conditions)
-if success_chance > required_power:
-    battle_result = "VICTORY"
-    gold_found = treasure_base * 2
-    experience_gained = 100
-    print("🎉 VICTORY! You defeated the monster!")
-elif success_chance > treasure_base:
-    battle_result = "NARROW VICTORY"  
-    gold_found = treasure_base + 20
-    experience_gained = 75
-    print("😅 NARROW VICTORY! It was a tough fight!")
-else:
-    battle_result = "RETREAT"
-    gold_found = treasure_base - 10
-    if gold_found < 0:  # Make sure gold doesn't go below 0
-        gold_found = 5
-    experience_gained = 25
-    print("😬 You had to retreat, but you learned something!")
-
-# Calculate rewards (Lesson 3: Simple Arithmetic)
-gems_found = gold_found / 25  # Simple division
-gems_found = int(gems_found)  # Convert to whole number
-total_treasure_value = gold_found + gems_found
-
-print(f"\n💰 Gold Found: {gold_found}")
-print(f"💎 Gems Found: {gems_found}")
-print(f"💰 Total Treasure Value: {total_treasure_value}")
-print(f"⭐ Experience Gained: {experience_gained} XP")
+# Create a simple story using f-strings
+print("=== YOUR ADVENTURE STORY ===")
+print(f"Once upon a time, {name} went to a {location}.")
+print(f"With {strength} strength and {magic} magic power,")
+print(f"{name} bravely faced the {monster}!")
+print(f"Using {favorite_color} armor, our hero won the battle!")
+print()
                     </div>
 
-                    <h3>📜 Step 5: Epic Story Generator</h3>
+                    <h3>🏆 Step 7: Give a Rating (Lesson 6: Simple Conditions)</h3>
                     <div class="code-block">
-# Generate epic story (Lesson 4: String manipulation + f-strings)
-print("\n" + "=" * 40)
-print("📜 YOUR EPIC ADVENTURE STORY")
-print("=" * 40)
+# Simple rating system
+total_points = strength + magic + luck
+print("=== ADVENTURE RATING ===")
+print("Total Points: " + str(total_points))
 
-# Create dynamic story with all our variables (Lesson 4: String manipulation)
-print(f"Once upon a time, {character_name}, a {age}-year-old {character_type.lower()},")
-print(f"embarked on a legendary quest. Wearing {favorite_color.lower()} armor that")
-print(f"shimmered in the sunlight, our hero ventured into the {location.lower()}.")
-print()
-print(f"With {strength} strength, {magic_power} magic power, and {luck} luck points,")
-print(f"{character_name} was ready for anything! The journey led to an encounter")
-print(f"with the fearsome {monster.upper()}!")
-print()
-print(f"Using the powerful '{special_ability}' technique, our brave {character_type.lower()}")
-print(f"achieved a {battle_result.lower()}! The adventure yielded {gold_found} gold pieces")
-print(f"and {gems_found} precious gems.")
-
-# Simple power assessment (Lesson 6: Conditions)
-if total_power > 100:
-    power_description = "mighty"
+# Simple rating
+if total_points > 30:
+    rating = "AMAZING HERO"
+elif total_points > 20:
+    rating = "GOOD ADVENTURER"
 else:
-    power_description = "adequate"
+    rating = "BRAVE BEGINNER"
 
-if danger_level == "High":
-    quest_description = "perilous"
-else:
-    quest_description = "challenging"
-
-print(f"{character_name}'s power level of {total_power} proved {power_description}")
-print(f"for this {quest_description} quest!")
-                    </div>
-
-                    <h3>🏆 Step 6: Adventure Rating & Finale</h3>
-                    <div class="code-block">
-# Final rating system (Lesson 6: Complex conditions)
-print("=" * 40)
-print("🏆 ADVENTURE RATING SYSTEM")
-print("=" * 40)
-
-# Calculate final score using multiple factors (Lesson 3: Arithmetic)
-adventure_score = total_power + experience_gained + total_treasure_value
-
-# Determine rating with simple conditions (Lesson 6: Conditions)
-if adventure_score >= 300:
-    rating = "LEGENDARY HERO"
-    emoji = "🌟"
-elif adventure_score >= 250:
-    rating = "MASTER ADVENTURER"
-    emoji = "🏆"
-elif adventure_score >= 200:
-    rating = "SKILLED EXPLORER"
-    emoji = "🎖️"
-elif adventure_score >= 150:
-    rating = "BRAVE WANDERER"
-    emoji = "⚔️"
-else:
-    rating = "NOVICE ADVENTURER"
-    emoji = "🗡️"
-
-# Display final results (Lesson 1: Printing + Lesson 4: String formatting)
-print(f"📊 Final Adventure Score: {adventure_score}")
-print(f"{emoji} Adventure Rating: {rating}")
-print()
-
-# Personalized message based on rating (Lesson 6: Conditions)
-if adventure_score >= 250:
-    message = f"Amazing work, {character_name}! You're destined for greatness!"
-elif adventure_score >= 200:
-    message = f"Well done, {character_name}! You're becoming a true adventurer!"
-else:
-    message = f"Great start, {character_name}! Every expert was once a beginner!"
-
-print(f"💌 {message}")
-
-# Fun facts using string operations and math
-print("\n" + "=" * 30)
-print("📊 FUN ADVENTURE FACTS")
-print("=" * 30)
-print(f"🔤 Your name has {len(character_name)} letters")
-print(f"🎨 Your favorite color '{favorite_color}' has {len(favorite_color)} letters")
-print(f"⚡ Your power level is {total_power} points!")
-print(f"💰 You found {gold_found + gems_found} treasure items total!")
-print(f"📈 Adventure difficulty was {danger_level.upper()}!")
-
-print("\n🎉 Thanks for playing the Python Adventure Generator! 🎉")
+print("You are a " + rating + "!")
+print("Thanks for playing!")
                     </div>
                 </div>
 
                 <div class="lesson-section">
-                    <h2>🎯 Your Mission: Build the Complete Adventure!</h2>
+                    <h2>🎯 Your Mission: Build the Complete Story!</h2>
                     
                     <div class="challenge">
-                        <h3>🚀 Main Challenge: Complete Adventure Generator</h3>
-                        <p>Combine all the code sections above into one complete program! Run it and experience your personalized adventure.</p>
+                        <h3>🚀 Main Challenge: Complete Adventure Story</h3>
+                        <p>Combine all the code sections above into one complete program! Copy each step in order and run it to create your personalized adventure story.</p>
                         
                         <div class="hint">
                             <strong>💡 Pro Tips:</strong>
                             <ul>
-                                <li>Copy each section in order</li>
+                                <li>Copy each step in order (1, 2, 3, 4, 5, 6, 7)</li>
                                 <li>Run the program multiple times with different inputs</li>
                                 <li>Try different names, ages, and choices to see how the story changes</li>
                                 <li>Notice how every concept from lessons 1-6 is being used!</li>
@@ -406,34 +277,34 @@ print("\n🎉 Thanks for playing the Python Adventure Generator! 🎉")
                     <h2>🎨 Bonus Challenges</h2>
                     
                     <div class="exercise">
-                        <h3>🌟 Challenge 1: Add More Adventures</h3>
-                        <p>Add a 4th adventure option with your own creative location, monster, and treasure values.</p>
+                        <h3>🌟 Challenge 1: Add More Places</h3>
+                        <p>Add a 4th location choice (like "Mountain" or "Beach") with a new monster.</p>
                         <div class="hint">
-                            <strong>Hint:</strong> Add another elif condition in the adventure choice section.
+                            <strong>Hint:</strong> Add another elif condition in Step 5.
                         </div>
                     </div>
                     
                     <div class="exercise">
-                        <h3>🎭 Challenge 2: Character Customization</h3>
-                        <p>Ask for more character details like favorite animal or hobby, then incorporate them into the story.</p>
+                        <h3>🎭 Challenge 2: More Character Details</h3>
+                        <p>Ask for the player's favorite animal and add it to the story.</p>
                         <div class="hint">
-                            <strong>Hint:</strong> Use more input() functions and add the variables to your f-string story.
+                            <strong>Hint:</strong> Add another input() in Step 3 and use it in the f-string in Step 6.
                         </div>
                     </div>
                     
                     <div class="exercise">
-                        <h3>🧮 Challenge 3: Advanced Calculator</h3>
-                        <p>Create a "Magic Potion Calculator" that asks for ingredient quantities and calculates the potion's power using complex math.</p>
+                        <h3>🧮 Challenge 3: Different Math</h3>
+                        <p>Change the math in Step 4 to use multiplication (*) instead of addition (+).</p>
                         <div class="hint">
-                            <strong>Hint:</strong> Use multiplication, division, and modulus operators with multiple input values.
+                            <strong>Hint:</strong> Try strength = age * 2 or magic = len(name) * 3.
                         </div>
                     </div>
                     
                     <div class="exercise">
-                        <h3>🏆 Challenge 4: Rating System</h3>
-                        <p>Create your own adventure rating system with at least 6 different rating levels and custom messages.</p>
+                        <h3>🏆 Challenge 4: More Rating Levels</h3>
+                        <p>Add more rating levels in Step 7 (like "SUPER HERO" for scores over 40).</p>
                         <div class="hint">
-                            <strong>Hint:</strong> Use multiple if-elif statements with different score thresholds.
+                            <strong>Hint:</strong> Add more if-elif conditions with different numbers.
                         </div>
                     </div>
                 </div>
