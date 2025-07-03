@@ -8,10 +8,6 @@ function createMenuTemplate(currentLesson = '') {
             <a href="index.html">← Back to Course</a>
         </div>
         <nav class="sidebar-nav">
-            <a href="index.html" class="lesson-link ${currentLesson === 'index' ? 'active' : ''}">
-                <div class="lesson-number">Home</div>
-                <span>Course Home</span>
-            </a>
             <a href="lesson1.html" class="lesson-link ${currentLesson === 'lesson1' ? 'active' : ''}">
                 <div class="lesson-number">1</div>
                 <span>Running Python Online & Printing</span>
