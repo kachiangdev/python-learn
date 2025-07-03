@@ -9,7 +9,7 @@ function createMenuTemplate(currentLesson = '') {
         </div>
         <nav class="sidebar-nav">
             <a href="index.html" class="lesson-link ${currentLesson === 'index' ? 'active' : ''}">
-                <div class="lesson-number">🏠</div>
+                <div class="lesson-number">Home</div>
                 <span>Course Home</span>
             </a>
             <a href="lesson1.html" class="lesson-link ${currentLesson === 'lesson1' ? 'active' : ''}">
@@ -50,11 +50,11 @@ function createMenuTemplate(currentLesson = '') {
             </a>
             <a href="lesson10.html" class="lesson-link ${currentLesson === 'lesson10' ? 'active' : ''}">
                 <div class="lesson-number">10</div>
-                <span>📚 Dictionaries</span>
+                <span>Dictionaries</span>
             </a>
             <a href="lesson11.html" class="lesson-link ${currentLesson === 'lesson11' ? 'active' : ''}">
                 <div class="lesson-number">11</div>
-                <span>⚙️ Functions</span>
+                <span>Functions</span>
             </a>
             <a href="lesson12.html" class="lesson-link ${currentLesson === 'lesson12' ? 'active' : ''}">
                 <div class="lesson-number">12</div>
@@ -62,7 +62,7 @@ function createMenuTemplate(currentLesson = '') {
             </a>
             <a href="lesson13.html" class="lesson-link ${currentLesson === 'lesson13' ? 'active' : ''}">
                 <div class="lesson-number">13</div>
-                <span>Ultimate Python RPG Builder</span>
+                <span>Python RPG Builder</span>
             </a>
             <a href="lesson14.html" class="lesson-link ${currentLesson === 'lesson14' ? 'active' : ''}">
                 <div class="lesson-number">14</div>
