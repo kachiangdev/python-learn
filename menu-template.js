@@ -88,6 +88,35 @@ function createMenuTemplate(currentLesson = '') {
     `;
 }
 
+// Function to save sidebar scroll position
+function saveSidebarScrollPosition() {
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+        localStorage.setItem('pythonCourse_sidebarScrollTop', sidebar.scrollTop);
+    }
+}
+
+// Function to restore sidebar scroll position
+function restoreSidebarScrollPosition() {
+    const sidebar = document.querySelector('.sidebar');
+    const savedScrollTop = localStorage.getItem('pythonCourse_sidebarScrollTop');
+    
+    if (sidebar && savedScrollTop) {
+        sidebar.scrollTop = parseInt(savedScrollTop, 10);
+    }
+}
+
+// Function to add scroll position saving to menu links
+function addScrollPositionHandlers() {
+    const menuLinks = document.querySelectorAll('.sidebar .lesson-link');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Save scroll position before navigating
+            saveSidebarScrollPosition();
+        });
+    });
+}
+
 // Function to inject the menu into the current page
 function injectMenu() {
     const sidebar = document.querySelector('.sidebar');
@@ -98,6 +127,12 @@ function injectMenu() {
         
         // Replace sidebar content with template
         sidebar.innerHTML = createMenuTemplate(currentLesson);
+        
+        // Add scroll position handlers to menu links
+        addScrollPositionHandlers();
+        
+        // Restore scroll position after a short delay to ensure content is rendered
+        setTimeout(restoreSidebarScrollPosition, 100);
     }
 }
 
@@ -106,5 +141,10 @@ document.addEventListener('DOMContentLoaded', injectMenu);
 
 // Export functions for manual use if needed
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { createMenuTemplate, injectMenu };
+    module.exports = { 
+        createMenuTemplate, 
+        injectMenu, 
+        saveSidebarScrollPosition, 
+        restoreSidebarScrollPosition 
+    };
 } 
