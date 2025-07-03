@@ -57,11 +57,11 @@
                 </a>
                 <a href="lesson10.html" class="lesson-link">
                     <div class="lesson-number">10</div>
-                    <span>Functions</span>
+                    <span>Dictionaries</span>
                 </a>
                 <a href="lesson11.html" class="lesson-link active">
                     <div class="lesson-number">11</div>
-                    <span>Dictionaries</span>
+                    <span>Functions</span>
                 </a>
                 <a href="lesson12.html" class="lesson-link">
                     <div class="lesson-number">12</div>
@@ -98,60 +98,120 @@
         <main class="main-content">
             <div class="content">
                 <div class="lesson-header">
-                    <h1>Lesson 11: Dictionaries</h1>
-                    <p class="goal">Store key-value pairs.</p>
+                    <h1>Lesson 11: Functions</h1>
+                    <p class="goal">Organize code into reusable blocks with functions.</p>
                 </div>
 
                 <div class="lesson-section">
-                    <h2>📚 What are Dictionaries?</h2>
-                    <p>Dictionaries are like real-world dictionaries, but instead of words and definitions, they store key-value pairs. Think of them as a way to organize related information - like a phone book where names (keys) are linked to phone numbers (values).</p>
+                    <h2>⚙️ What are Functions?</h2>
+                    <p>Functions are like mini-programs within your program! They're reusable blocks of code that perform specific tasks. Think of them as tools in your programming toolbox - once you create them, you can use them over and over again.</p>
                     
                     <div class="info-box">
-                        <h3>🗝️ Dictionary Features</h3>
+                        <h3>🔧 Why Use Functions?</h3>
                         <ul>
-                            <li>Store data as key-value pairs for easy lookup</li>
-                            <li>Keys must be unique, but values can be duplicated</li>
-                            <li>Very fast for finding specific data</li>
-                            <li>Mutable - you can add, remove, or change entries</li>
-                            <li>Perfect for representing real-world relationships</li>
+                            <li>Avoid repeating the same code multiple times</li>
+                            <li>Make your programs more organized and readable</li>
+                            <li>Break complex problems into smaller, manageable pieces</li>
+                            <li>Make debugging easier by isolating functionality</li>
+                            <li>Enable code reuse across different parts of your program</li>
                         </ul>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h2>🏗️ Built-in Functions vs User-Defined Functions</h2>
+                    <p>In Python, there are two main types of functions you'll work with:</p>
+                    
+                    <div class="concept-grid">
+                        <div class="concept-item">
+                            <h3>🔧 Built-in Functions</h3>
+                            <p>These are functions that come pre-installed with Python. You don't need to create them - they're ready to use!</p>
+                            <div class="info-box">
+                                <h4>Common Built-in Functions:</h4>
+                                <ul>
+                                    <li><code>print()</code> - Display output</li>
+                                    <li><code>input()</code> - Get user input</li>
+                                    <li><code>len()</code> - Get length of strings/lists</li>
+                                    <li><code>int()</code>, <code>float()</code>, <code>str()</code> - Convert data types</li>
+                                    <li><code>max()</code>, <code>min()</code> - Find maximum/minimum</li>
+                                    <li><code>sum()</code> - Add numbers in a list</li>
+                                </ul>
+                            </div>
+                            <div class="code-block">
+                            </div>
+                        </div>
+                        
+                        <div class="concept-item">
+                            <h3>👨‍💻 User-Defined Functions</h3>
+                            <p>These are functions that YOU create using the <code>def</code> keyword. You design them to solve specific problems in your program.</p>
+                            <div class="info-box">
+                                <h4>Creating Your Own Functions:</h4>
+                                <ul>
+                                    <li>Use <code>def</code> keyword to define</li>
+                                    <li>Choose meaningful names</li>
+                                    <li>Add parameters if needed</li>
+                                    <li>Use <code>return</code> to send values back</li>
+                                    <li>Call them just like built-in functions</li>
+                                </ul>
+                            </div>
+                            <div class="code-block">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h3>🎯 Key Differences</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+                            <div>
+                                <h4>Built-in Functions</h4>
+                                <ul>
+                                    <li>✅ Ready to use immediately</li>
+                                    <li>✅ Optimized for performance</li>
+                                    <li>✅ Well-tested and reliable</li>
+                                    <li>❌ Limited to what Python provides</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>User-Defined Functions</h4>
+                                <ul>
+                                    <li>✅ Customized for your specific needs</li>
+                                    <li>✅ Can combine multiple operations</li>
+                                    <li>✅ Make your code more organized</li>
+                                    <li>❌ You need to write and test them</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="lesson-section">
                     <h2>Examples</h2>
                     
-                    <h3>Example 1: Creating a Dictionary</h3>
+                    <h3>Example 1: Simple Function</h3>
                     <div class="code-block">
-                        
                     </div>
-                    <p>This will output: <code>{'name': 'Alice', 'age': 25}</code></p>
-
-                    <h3>Example 2: Accessing Dictionary Values</h3>
+                    
+                    <h3>Example 2: Function with Return Value</h3>
                     <div class="code-block">
-                        
                     </div>
-                    <p>This will output:</p>
+                    
+                    <h3>Example 3: Function with Default Parameters</h3>
                     <div class="code-block">
-                        
                     </div>
-
-                    <h3>Example 3: Adding New Key-Value Pairs</h3>
+                    
+                    <h3>Example 4: Function with Multiple Return Values</h3>
                     <div class="code-block">
-                        
                     </div>
-                    <p>This will output: <code>{'name': 'Alice', 'age': 25, 'city': 'New York'}</code></p>
                 </div>
 
                 <div class="lesson-section">
-                    <h2>Dictionary Operations</h2>
+                    <h2>Key Points</h2>
                     <ul>
-                        <li><code>dict[key]</code> - Access value by key</li>
-                        <li><code>dict[key] = value</code> - Add or update key-value pair</li>
-                        <li><code>dict.get(key)</code> - Safely access value (returns None if key doesn't exist)</li>
-                        <li><code>dict.keys()</code> - Get all keys</li>
-                        <li><code>dict.values()</code> - Get all values</li>
-                        <li><code>dict.items()</code> - Get all key-value pairs</li>
+                        <li><strong>def:</strong> Keyword to define a function</li>
+                        <li><strong>Parameters:</strong> Values passed to the function</li>
+                        <li><strong>return:</strong> Send value back from function</li>
+                        <li><strong>Default parameters:</strong> Values used if none provided</li>
+                        <li>Functions can return multiple values as tuples</li>
                     </ul>
                 </div>
 
@@ -159,22 +219,22 @@
                     <h2>💡 Key Concepts</h2>
                     <div class="concept-grid">
                         <div class="concept-item">
-                            <h3>📚 Creating Dictionaries</h3>
-                            <p>Store data as key-value pairs:</p>
+                            <h3>📝 Defining Functions</h3>
+                            <p>Create reusable blocks of code:</p>
                             <div class="code-block">
                             </div>
                         </div>
                         
                         <div class="concept-item">
-                            <h3>🔍 Accessing Values</h3>
-                            <p>Get values using their keys:</p>
+                            <h3>🔄 Return Values</h3>
+                            <p>Functions can send values back:</p>
                             <div class="code-block">
                             </div>
                         </div>
                         
                         <div class="concept-item">
-                            <h3>➕ Adding/Updating</h3>
-                            <p>Add new or update existing key-value pairs:</p>
+                            <h3>⚙️ Parameters</h3>
+                            <p>Pass data into functions:</p>
                             <div class="code-block">
                             </div>
                         </div>
@@ -185,18 +245,18 @@
                     <h2>🎯 Practice Exercises</h2>
                     
                     <div class="exercise">
-                        <h3>Exercise 1: Book Information</h3>
-                        <p>Create a dictionary for a book with title, author, and year, then print each piece of information.</p>
+                        <h3>Exercise 1: Area Calculator</h3>
+                        <p>Create a function that calculates the area of a rectangle given length and width.</p>
                         <div class="hint">
-                            <strong>Hint:</strong> book = {"title": "...", "author": "...", "year": 2023}
+                            <strong>Hint:</strong> def rectangle_area(length, width): return length * width
                         </div>
                     </div>
                     
                     <div class="exercise">
-                        <h3>Exercise 2: Dictionary Operations</h3>
-                        <p>Create a dictionary, add new key-value pairs, update existing values, and remove an item.</p>
+                        <h3>Exercise 2: Temperature Converter</h3>
+                        <p>Write functions to convert Celsius to Fahrenheit and vice versa.</p>
                         <div class="hint">
-                            <strong>Hint:</strong> Use dict[key] = value to add/update, del dict[key] to remove.
+                            <strong>Hint:</strong> F = C * 9/5 + 32 and C = (F - 32) * 5/9
                         </div>
                     </div>
                 </div>
@@ -204,10 +264,10 @@
                 <div class="lesson-section">
                     <h2>🏆 Challenge</h2>
                     <div class="challenge">
-                        <h3>Challenge: Movie Rating System</h3>
-                        <p>Create a dictionary of your favorite movies and their ratings, then find the highest-rated movie.</p>
+                        <h3>Challenge: Multi-Value Function</h3>
+                        <p>Create a function that returns multiple values: the sum, difference, and product of two numbers.</p>
                         <div class="hint">
-                            <strong>Hint:</strong> Use max(movies, key=movies.get) to find the movie with highest rating.
+                            <strong>Hint:</strong> return sum_val, diff_val, product_val and use tuple unpacking when calling.
                         </div>
                     </div>
                 
