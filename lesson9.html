@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 9: Loops - Python Learning Course</title>
+    <title>Lesson 9: Dictionaries - Python Learning Course</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="styles.css?v=1751573086">
@@ -21,22 +21,22 @@
         <main class="main-content">
             <div class="content">
                 <div class="lesson-header">
-                    <h1>Lesson 9: Loops</h1>
-                    <p class="goal">Repeat tasks.</p>
+                    <h1>Lesson 9: Dictionaries</h1>
+                    <p class="goal">Store key-value pairs.</p>
                 </div>
 
                 <div class="lesson-section">
-                    <h2>🔄 What are Loops?</h2>
-                    <p>Loops are one of the most powerful features in programming! They let you repeat tasks automatically instead of writing the same code over and over. Whether you're processing a list of items or counting to 100, loops make it easy.</p>
+                    <h2>📚 What are Dictionaries?</h2>
+                    <p>Dictionaries are like real-world dictionaries, but instead of words and definitions, they store key-value pairs. Think of them as a way to organize related information - like a phone book where names (keys) are linked to phone numbers (values).</p>
                     
                     <div class="info-box">
-                        <h3>🎯 Types of Loops</h3>
+                        <h3>🗝️ Dictionary Features</h3>
                         <ul>
-                            <li><code>for</code> loops - Perfect for going through lists or counting</li>
-                            <li><code>while</code> loops - Keep going until a condition changes</li>
-                            <li>Range loops - Repeat a specific number of times</li>
-                            <li>List loops - Process each item in a collection</li>
-                            <li>Nested loops - Loops inside other loops</li>
+                            <li>Store data as key-value pairs for easy lookup</li>
+                            <li>Keys must be unique, but values can be duplicated</li>
+                            <li>Very fast for finding specific data</li>
+                            <li>Mutable - you can add, remove, or change entries</li>
+                            <li>Perfect for representing real-world relationships</li>
                         </ul>
                     </div>
                 </div>
@@ -44,7 +44,13 @@
                 <div class="lesson-section">
                     <h2>Examples</h2>
                     
-                    <h3>Example 1: Range Loop</h3>
+                    <h3>Example 1: Creating a Dictionary</h3>
+                    <div class="code-block">
+                        
+                    </div>
+                    <p>This will output: <code>{'name': 'Alice', 'age': 25}</code></p>
+
+                    <h3>Example 2: Accessing Dictionary Values</h3>
                     <div class="code-block">
                         
                     </div>
@@ -53,29 +59,22 @@
                         
                     </div>
 
-                    <h3>Example 2: List Loop</h3>
+                    <h3>Example 3: Adding New Key-Value Pairs</h3>
                     <div class="code-block">
                         
                     </div>
-                    <p>This will output:</p>
-                    <div class="code-block">
-                        
-                    </div>
-
-                    <h3>Example 3: Sum with Loop</h3>
-                    <div class="code-block">
-                        
-                    </div>
-                    <p>This will output: <code>6</code></p>
+                    <p>This will output: <code>{'name': 'Alice', 'age': 25, 'city': 'New York'}</code></p>
                 </div>
 
                 <div class="lesson-section">
-                    <h2>Loop Types</h2>
+                    <h2>Dictionary Operations</h2>
                     <ul>
-                        <li><code>for item in list:</code> - Loop through list items</li>
-                        <li><code>for i in range(n):</code> - Loop n times (0 to n-1)</li>
-                        <li><code>for i in range(start, end):</code> - Loop from start to end-1</li>
-                        <li><code>while condition:</code> - Loop while condition is True</li>
+                        <li><code>dict[key]</code> - Access value by key</li>
+                        <li><code>dict[key] = value</code> - Add or update key-value pair</li>
+                        <li><code>dict.get(key)</code> - Safely access value (returns None if key doesn't exist)</li>
+                        <li><code>dict.keys()</code> - Get all keys</li>
+                        <li><code>dict.values()</code> - Get all values</li>
+                        <li><code>dict.items()</code> - Get all key-value pairs</li>
                     </ul>
                 </div>
 
@@ -83,22 +82,22 @@
                     <h2>💡 Key Concepts</h2>
                     <div class="concept-grid">
                         <div class="concept-item">
-                            <h3>🔢 Range Loops</h3>
-                            <p>Repeat code a specific number of times:</p>
+                            <h3>📚 Creating Dictionaries</h3>
+                            <p>Store data as key-value pairs:</p>
                             <div class="code-block">
                             </div>
                         </div>
                         
                         <div class="concept-item">
-                            <h3>📋 List Loops</h3>
-                            <p>Go through each item in a list:</p>
+                            <h3>🔍 Accessing Values</h3>
+                            <p>Get values using their keys:</p>
                             <div class="code-block">
                             </div>
                         </div>
                         
                         <div class="concept-item">
-                            <h3>🧮 Loop Calculations</h3>
-                            <p>Use loops to perform calculations:</p>
+                            <h3>➕ Adding/Updating</h3>
+                            <p>Add new or update existing key-value pairs:</p>
                             <div class="code-block">
                             </div>
                         </div>
@@ -109,18 +108,18 @@
                     <h2>🎯 Practice Exercises</h2>
                     
                     <div class="exercise">
-                        <h3>Exercise 1: Favorite Foods Collection</h3>
-                        <p>Ask for 3 favorite foods and print each one with its position number.</p>
+                        <h3>Exercise 1: Book Information</h3>
+                        <p>Create a dictionary for a book with title, author, and year, then print each piece of information.</p>
                         <div class="hint">
-                            <strong>Hint:</strong> Use a for loop with range(3) to collect inputs and enumerate to print with numbers.
+                            <strong>Hint:</strong> book = {"title": "...", "author": "...", "year": 2023}
                         </div>
                     </div>
                     
                     <div class="exercise">
-                        <h3>Exercise 2: Sum Calculator</h3>
-                        <p>Use a for loop to calculate the sum of numbers from 1 to 100.</p>
+                        <h3>Exercise 2: Dictionary Operations</h3>
+                        <p>Create a dictionary, add new key-value pairs, update existing values, and remove an item.</p>
                         <div class="hint">
-                            <strong>Hint:</strong> Initialize sum = 0, then use for i in range(1, 101): sum += i.
+                            <strong>Hint:</strong> Use dict[key] = value to add/update, del dict[key] to remove.
                         </div>
                     </div>
                 </div>
@@ -128,10 +127,10 @@
                 <div class="lesson-section">
                     <h2>🏆 Challenge</h2>
                     <div class="challenge">
-                        <h3>Challenge: Multiplication Table</h3>
-                        <p>Ask for a number and print its multiplication table from 1 to 12.</p>
+                        <h3>Challenge: Movie Rating System</h3>
+                        <p>Create a dictionary of your favorite movies and their ratings, then find the highest-rated movie.</p>
                         <div class="hint">
-                            <strong>Hint:</strong> Use a for loop with range(1, 13) and multiply the input number by each value.
+                            <strong>Hint:</strong> Use max(movies, key=movies.get) to find the movie with highest rating.
                         </div>
                     </div>
                 

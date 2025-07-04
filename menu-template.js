@@ -41,11 +41,11 @@ function createMenuTemplate(currentLesson = '') {
             </a>
             <a href="lesson9.html" class="lesson-link ${currentLesson === 'lesson9' ? 'active' : ''}">
                 <div class="lesson-number">9</div>
-                <span>Loops</span>
+                <span>Dictionaries</span>
             </a>
             <a href="lesson10.html" class="lesson-link ${currentLesson === 'lesson10' ? 'active' : ''}">
                 <div class="lesson-number">10</div>
-                <span>Dictionaries</span>
+                <span>Loops</span>
             </a>
             <a href="lesson11.html" class="lesson-link ${currentLesson === 'lesson11' ? 'active' : ''}">
                 <div class="lesson-number">11</div>
