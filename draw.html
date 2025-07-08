@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .draw-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+        #drawCanvas {
+            border: 2px solid #333;
+            background: #fff;
+            cursor: crosshair;
+        }
+        .draw-controls {
+            margin-top: 16px;
+            display: flex;
+            gap: 12px;
+        }
+        .draw-controls input[type="color"] {
+            width: 36px;
+            height: 36px;
+            border: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="draw-container">
+        <h1>🎨 Draw Game</h1>
+        <canvas id="drawCanvas" width="600" height="400"></canvas>
+        <div class="draw-controls">
+            <label>Color: <input type="color" id="colorPicker" value="#2222ee"></label>
+            <label>Brush Size: <input type="range" id="brushSize" min="1" max="30" value="5"></label>
+            <button id="clearBtn">🧹 Clear</button>
+            <button id="saveBtn">💾 Save Drawing</button>
+        </div>
+        <a id="downloadLink" style="display:none;"></a>
+    </div>
+    <script>
+        const canvas = document.getElementById('drawCanvas');
+        const ctx = canvas.getContext('2d');
+        let drawing = false;
+        let lastX = 0, lastY = 0;
+
+        function getBrushColor() {
+            return document.getElementById('colorPicker').value;
+        }
+        function getBrushSize() {
+            return document.getElementById('brushSize').value;
+        }
+
+        canvas.addEventListener('mousedown', (e) => {
+            drawing = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        });
+        canvas.addEventListener('mousemove', (e) => {
+            if (!drawing) return;
+            ctx.strokeStyle = getBrushColor();
+            ctx.lineWidth = getBrushSize();
+            ctx.lineCap = 'round';
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        });
+        canvas.addEventListener('mouseup', () => drawing = false);
+        canvas.addEventListener('mouseleave', () => drawing = false);
+
+        document.getElementById('clearBtn').onclick = () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        };
+
+        document.getElementById('saveBtn').onclick = () => {
+            const dataURL = canvas.toDataURL('image/png');
+            const link = document.getElementById('downloadLink');
+            link.href = dataURL;
+            link.download = 'drawing.png';
+            link.style.display = 'block';
+            link.click();
+            link.style.display = 'none';
+        };
+    </script>
+</body>
+</html> 
