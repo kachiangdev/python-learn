@@ -658,103 +658,24 @@ pets.append("fish")
 print("Updated list:", pets)`
         ],
         9: [
-            `for i in range(5):
-    print(f"Number: {i}")`,
-            `0
-1
-2
-3
-4`,
-            `for fruit in ["apple", "banana"]:
-    print(f"I like {fruit}")`,
-            `apple
-banana`,
-            `numbers = [1, 2, 3]
-for num in numbers:
-    print(num * 2)`,
-            `# Range loops
-for i in range(3):
-    print("Hello", i)`,
-            `# List loops
-fruits = ["apple", "banana"]
-for fruit in fruits:
-    print("Fruit:", fruit)`,
-            `# Loop calculations
-total = 0
-for num in [1, 2, 3, 4]:
-    total += num
-print("Sum:", total)`
+            `person = {"name": "Alice", "age": 25}\nprint(person)`,
+            `person = {"name": "Alice", "age": 25}\nprint(person["name"])
+print(person["age"])
+`,
+            `person = {"name": "Alice", "age": 25}\nperson["city"] = "New York"\nprint(person)`,
+            `# Creating a dictionary\ncar = {"brand": "Toyota", "year": 2020}\nprint(car)`,
+            `# Accessing values\ncar = {"brand": "Toyota", "year": 2020}\nprint(car["brand"])`,
+            `# Adding or updating\ncar = {"brand": "Toyota", "year": 2020}\ncar["color"] = "red"\nprint(car)`
         ],
         10: [
-            `# Examples of built-in functions
-# These come with Python - ready to use!
-numbers = [1, 2, 3, 4, 5]
-text = "Hello World"
-
-print("Using built-in functions:")
-print("Length of list:", len(numbers))
-print("Maximum number:", max(numbers))
-print("Sum of numbers:", sum(numbers))
-print("Text in uppercase:", text.upper())
-print("Convert to integer:", int("42"))`,
-            `# Examples of user-defined functions
-# These are functions YOU create!
-
-def calculate_area(length, width):
-    """Calculate area of a rectangle"""
-    return length * width
-
-def greet_user(name, age):
-    """Greet a user with their name and age"""
-    return f"Hi {name}! You are {age} years old."
-
-# Using your custom functions
-area = calculate_area(5, 3)
-greeting = greet_user("Alice", 25)
-
-print("Area:", area)
-print(greeting)`,
-            `# Defining a function
-def greet(name):
-    print(f"Hello, {name}!")
-
-# Calling the function
-greet("Alice")
-greet("Bob")`,
-            `# Function with parameters and return value
-def add_numbers(a, b):
-    return a + b
-
-result = add_numbers(5, 3)
-print("Sum:", result)`,
-            `# Function with default parameters
-def greet_with_title(name, title="Mr."):
-    print(f"Hello, {title} {name}!")
-
-greet_with_title("Smith")
-greet_with_title("Johnson", "Dr.")`,
-            `# Function with multiple return values
-def get_name_and_age():
-    return "Alice", 25
-
-name, age = get_name_and_age()
-print(f"Name: {name}, Age: {age}")`,
-            `# Defining functions
-def say_hello():
-    print("Hello!")
-
-say_hello()`,
-            `# Return values
-def multiply(x, y):
-    return x * y
-
-result = multiply(4, 5)
-print(result)`,
-            `# Parameters
-def greet_person(name, age):
-    print(f"Hi {name}, you are {age}")
-
-greet_person("Alice", 25)`
+            `for i in range(5):\n    print(f"Number: {i}")`,
+            `0\n1\n2\n3\n4`,
+            `for fruit in ["apple", "banana"]:\n    print(f"I like {fruit}")`,
+            `apple\nbanana`,
+            `numbers = [1, 2, 3]\nfor num in numbers:\n    print(num * 2)`,
+            `# Range loops\nfor i in range(3):\n    print("Hello", i)`,
+            `# List loops\nfruits = ["apple", "banana"]\nfor fruit in fruits:\n    print("Fruit:", fruit)`,
+            `# Loop calculations\ntotal = 0\nfor num in [1, 2, 3, 4]:\n    total += num\nprint("Sum:", total)`
         ],
         11: [
             `person = {"name": "Alice", "age": 25}
